@@ -1,5 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@plugin "daisyui" {
-  themes: abyss --default --prefersdark, fantasy, cupcake;
+@plugin 'daisyui' {
+    themes:
+        abyss --default --prefersdark,
+        fantasy,
+        cupcake;
 }
