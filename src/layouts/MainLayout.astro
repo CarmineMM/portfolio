@@ -6,17 +6,27 @@ interface Props {
     description?: string
 }
 
-const { title, description } = Astro.props as Props
+const {
+    title = 'Carmine Maggio - Desarrollador Web',
+    description = 'Carmine Maggio: Desarrollador web especializado en Laravel, React y Flutter. Con experiencia en creación de aplicaciones web y móviles de alto rendimiento.',
+} = Astro.props as Props
 ---
 
-<html lang="es">
+<html lang='es'>
     <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        {description && <meta name="description" content={description} />}
-        <title>{title ?? 'Carmine Maggio'}</title>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+            href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
+            rel='stylesheet'
+        />
+
+        <meta charset='utf-8' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='viewport' content='width=device-width' />
+        <meta name='generator' content={Astro.generator} />
+        {description && <meta name='description' content={description} />}
+        <title>{title}</title>
     </head>
     <body>
         <slot />
