@@ -3,6 +3,7 @@ import MainLayout from '@layouts/MainLayout.astro'
 import '../styles/global.css'
 import Resume from '@/page-sections/Resume.astro'
 import About from '@/page-sections/home/About.astro'
+import Experience from '@/page-sections/home/Experience.astro'
 
 const lang = 'es'
 ---
@@ -10,8 +11,9 @@ const lang = 'es'
 <MainLayout bodyClasses='pt-16'>
     <div class='container grid grid-cols-1 gap-4 md:grid-cols-5'>
         <Resume lang={lang} />
-        <section class='md:col-span-3'>
+        <section class='md:col-span-3 md:px-4 lg:px-12 xl:px-24'>
             <About lang={lang} />
+            <Experience lang={lang} />
         </section>
     </div>
 </MainLayout>

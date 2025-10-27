@@ -1,0 +1,17 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+import ExperienceCard from '@components/card/ExperienceCard.astro'
+
+interface Props extends PageSections {
+    classList?: string
+}
+
+const { lang, classList = 'mb-12 md:-mx-6' } = Astro.props as Props
+---
+
+<section class={classList}>
+    <ExperienceCard lang={lang} title='Probando 1' />
+    <ExperienceCard lang={lang} title='Probando 2' />
+    <ExperienceCard lang={lang} title='Probando 3' />
+    <ExperienceCard lang={lang} title='Probando 4' />
+</section>

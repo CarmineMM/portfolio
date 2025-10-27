@@ -1,0 +1,25 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+
+interface Props extends PageSections {
+    title: string
+}
+
+const { title, lang } = Astro.props
+---
+
+<article class='card card-side hover:bg-accent-content/5 mb-6 transition hover:shadow-md'>
+    <!-- Right, years -->
+    <div class='card-body max-w-40 pr-1 text-sm uppercase'>
+        <p class='mt-1'>2020 - Present</p>
+    </div>
+    <div class='card-body'>
+        <h3 class='card-title'>{title}</h3>
+        <h4>Subtitulo</h4>
+        <p>{lang}</p>
+        <span class='badge badge-sm'>
+            <a href=''>Javascript</a>
+        </span>
+    </div>
+    <a href='' class='absolute z-10 block h-full w-full'></a>
+</article>
