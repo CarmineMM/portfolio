@@ -6,11 +6,13 @@ interface Props extends PageSections {
     classList?: string
 }
 
-const { lang, classList = 'grid-cols-1 md:grid-cols-2' } = Astro.props as Props
+const { lang, classList = 'md:col-span-2 relative' } = Astro.props as Props
 ---
 
 <section class={classList}>
-    <h1 class='h1'>Carmine Maggio</h1>
-    <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
-    <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
+    <div class='md:fixed'>
+        <h1 class='h1'>Carmine Maggio</h1>
+        <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
+        <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
+    </div>
 </section>

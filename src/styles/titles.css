@@ -5,3 +5,7 @@
 .h4 {
     @apply text-lg xl:text-xl mb-2;
 }
+
+p {
+    @apply text-base-content/70 mb-1.5;
+}

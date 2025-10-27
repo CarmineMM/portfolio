@@ -1,5 +1,11 @@
 {
     "presentation": "Ingeniero de Sistemas y Desarrollador Web/Movil Full Stack.",
     "systems-engineer": "Ingeniero de sistemas",
-    "full-stack-developer": "Desarrollador Web/Móvil Full Stack"
+    "full-stack-developer": "Desarrollador Web/Móvil Full Stack",
+    "about-me": "Sobre mí",
+    "about-paragraphs": [
+        "Soy un ingeniero de sistemas con experiencia en desarrollo web y móvil. Me especializo en crear aplicaciones eficientes y escalables utilizando tecnologías modernas.",
+        "Tengo habilidades en una variedad de lenguajes de programación y frameworks, y disfruto trabajando en proyectos que desafían mis habilidades y me permiten aprender cosas nuevas.",
+        "Mi objetivo es contribuir a proyectos innovadores y colaborar con equipos talentosos para crear soluciones que tengan un impacto positivo."
+    ]
 }

@@ -2,12 +2,16 @@
 import MainLayout from '@layouts/MainLayout.astro'
 import '../styles/global.css'
 import Resume from '@/page-sections/Resume.astro'
+import About from '@/page-sections/home/About.astro'
 
 const lang = 'es'
 ---
 
 <MainLayout bodyClasses='pt-16'>
-    <div class='md:gird-cols-5 container grid grid-cols-1'>
+    <div class='container grid grid-cols-1 gap-4 md:grid-cols-5'>
         <Resume lang={lang} />
+        <section class='md:col-span-3'>
+            <About lang={lang} />
+        </section>
     </div>
 </MainLayout>
