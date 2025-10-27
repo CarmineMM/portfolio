@@ -1,13 +1,13 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro'
 import '../styles/global.css'
-import __ from '@config/i18n'
+import Resume from '@/page-sections/Resume.astro'
+
+const lang = 'es'
 ---
 
 <MainLayout bodyClasses='pt-16'>
-    <main class='container'>
-        <h1 class='h1'>Carmine Maggio</h1>
-        <h4 class='h4'>{__('systems-engineer')}.</h4>
-        <h3 class='h4'>{__('full-stack-developer')}.</h3>
-    </main>
+    <div class='md:gird-cols-5 container grid grid-cols-1'>
+        <Resume lang={lang} />
+    </div>
 </MainLayout>

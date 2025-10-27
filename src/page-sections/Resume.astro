@@ -1,0 +1,16 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+import { __ } from '@config/i18n'
+
+interface Props extends PageSections {
+    classList?: string
+}
+
+const { lang, classList = 'grid-cols-1 md:grid-cols-2' } = Astro.props as Props
+---
+
+<section class={classList}>
+    <h1 class='h1'>Carmine Maggio</h1>
+    <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
+    <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
+</section>
