@@ -8,10 +8,10 @@ import Experience from '@/page-sections/home/Experience.astro'
 const lang = 'es'
 ---
 
-<MainLayout bodyClasses='pt-16'>
+<MainLayout>
     <div class='container grid grid-cols-1 gap-4 md:grid-cols-5'>
         <Resume lang={lang} />
-        <section class='md:col-span-3 md:px-4 lg:px-12 xl:px-24'>
+        <section class='pt-16 md:col-span-3 md:px-4 lg:px-12 xl:px-24'>
             <About lang={lang} />
             <Experience lang={lang} />
         </section>

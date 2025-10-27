@@ -6,13 +6,16 @@ interface Props extends PageSections {
     classList?: string
 }
 
-const { lang, classList = 'md:col-span-2 relative' } = Astro.props as Props
+const { lang, classList = 'md:col-span-2 relative lg:max-h-screen' } = Astro.props as Props
 ---
 
 <section class={classList}>
-    <div class='md:fixed'>
-        <h1 class='h1'>Carmine Maggio</h1>
-        <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
-        <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
+    <div class='flex h-full py-16 lg:fixed lg:flex-col lg:justify-between'>
+        <aside>
+            <h1 class='h1'>Carmine Maggio</h1>
+            <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
+            <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
+        </aside>
+        <div>redes sociales</div>
     </div>
 </section>
