@@ -4,11 +4,13 @@ import '../styles/global.css'
 interface Props {
     title?: string
     description?: string
+    bodyClasses?: string
 }
 
 const {
     title = 'Carmine Maggio - Desarrollador Web',
     description = 'Carmine Maggio: Desarrollador web especializado en Laravel, React y Flutter. Con experiencia en creación de aplicaciones web y móviles de alto rendimiento.',
+    bodyClasses = '',
 } = Astro.props as Props
 ---
 
@@ -28,7 +30,7 @@ const {
         {description && <meta name='description' content={description} />}
         <title>{title}</title>
     </head>
-    <body>
+    <body class={bodyClasses}>
         <slot />
     </body>
 </html>
