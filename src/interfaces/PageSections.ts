@@ -1,3 +1,3 @@
 export default interface PageSections {
-    lang: 'es' | 'en';
+    lang: 'es' | 'en'
 }
