@@ -1,0 +1,41 @@
+---
+import { GithubIcon, LinkedinIcon, InstagramIcon, MailIcon } from 'astro-feather'
+
+const links = [
+    {
+        icon: GithubIcon,
+        href: 'https://github.com/CarmineMM',
+    },
+    {
+        icon: LinkedinIcon,
+        href: 'https://www.linkedin.com/in/carmine-maggio-157787144/',
+    },
+    {
+        icon: InstagramIcon,
+        href: 'https://www.instagram.com/carmine_maggio/',
+    },
+    {
+        icon: MailIcon,
+        href: 'mailto:carminemaggiom@gmail.com',
+    },
+    // {
+    //     icon: MessageCircleIcon,
+    //     href: 'https://wa.me/584244981009',
+    // },
+]
+---
+
+<nav class='flex gap-2' role='navigation' aria-label='Socials Links'>
+    {
+        links.map((link) => (
+            <a
+                href={link.href}
+                class='btn btn-circle btn-ghost'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <link.icon size={20} />
+            </a>
+        ))
+    }
+</nav>
