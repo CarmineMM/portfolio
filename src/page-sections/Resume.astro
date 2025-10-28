@@ -3,12 +3,15 @@ import type PageSections from '@/interfaces/PageSections'
 import MainNavbar from '@components/navigation/MainNavbar.vue'
 import Socials from '@components/navigation/Socials.astro'
 import { __ } from '@config/i18n'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 interface Props extends PageSections {
     classList?: string
 }
 
 const { lang, classList = 'md:col-span-2 relative lg:max-h-screen' } = Astro.props as Props
+
+const homeUrl = getRelativeLocaleUrl(lang, '/')
 ---
 
 <section class={classList}>
@@ -17,7 +20,7 @@ const { lang, classList = 'md:col-span-2 relative lg:max-h-screen' } = Astro.pro
             <h1 class='h1'>Carmine Maggio</h1>
             <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
             <h3 class='h4'>{__('full-stack-developer', { lng: lang })}.</h3>
-            <MainNavbar lang={lang} client:idle />
+            <MainNavbar lang={lang} client:idle homeUrl={homeUrl} />
         </article>
         <aside>
             <Socials />

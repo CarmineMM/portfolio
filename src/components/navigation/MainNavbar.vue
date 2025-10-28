@@ -6,14 +6,11 @@ const props = defineProps({
 </script>
 
 <template>
-    <nav class="text-secondary mt-8 leading-8 xl:mt-12 xl:leading-10">
-        <h4>
-            <a :href="homeUrl">/Home</a>
-        </h4>
-        <ul class="pl-4">
-            <li><a href="#about" class="">About Me</a></li>
-            <li><a href="#projects" class="">Projects</a></li>
-            <li><a href="#contact" class="">Contact</a></li>
+    <nav class="text-secondary/70 mt-12 leading-8 xl:mt-16 xl:leading-10">
+        <ul>
+            <li><a href="#about" class="hover:text-secondary">About Me</a></li>
+            <li><a href="#experience" class="hover:text-secondary">Experience</a></li>
+            <li><a href="#education" class="hover:text-secondary">Education</a></li>
         </ul>
     </nav>
 </template>
