@@ -9,3 +9,7 @@
 p {
     @apply text-base-content/70 mb-1.5;
 }
+
+p b {
+    @apply text-base-content font-semibold;
+}

@@ -3,7 +3,7 @@
 @plugin 'daisyui' {
     themes:
         abyss --default --prefersdark,
-        silk;
+        acid;
 }
 
 .poppins-light {

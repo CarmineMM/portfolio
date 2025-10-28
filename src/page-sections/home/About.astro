@@ -10,7 +10,7 @@ interface Props extends PageSections {
 const { lang, classList = 'mb-12' } = Astro.props as Props
 ---
 
-<article class={classList}>
+<article class={classList} id='about'>
     {
         _.map(__('about-paragraphs', { lng: lang, returnObjects: true }), (paragraph: string) => (
             <p set:html={paragraph} />

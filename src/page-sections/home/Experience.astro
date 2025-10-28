@@ -9,7 +9,7 @@ interface Props extends PageSections {
 const { lang, classList = 'mb-12 md:-mx-6' } = Astro.props as Props
 ---
 
-<section class={classList}>
+<section class={classList} id='experience'>
     <ExperienceCard lang={lang} title='Probando 1' />
     <ExperienceCard lang={lang} title='Probando 2' />
     <ExperienceCard lang={lang} title='Probando 3' />
