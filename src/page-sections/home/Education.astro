@@ -1,0 +1,14 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+import EducationCard from '@components/card/EducationCard.astro'
+
+interface Props extends PageSections {
+    classList?: string
+}
+
+const { lang, classList = 'mb-12 md:-mx-6' } = Astro.props as Props
+---
+
+<section class={classList}>
+    <EducationCard lang={lang} />
+</section>

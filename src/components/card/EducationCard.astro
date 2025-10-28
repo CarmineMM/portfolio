@@ -1,0 +1,13 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+
+interface Props extends PageSections {}
+
+const { lang } = Astro.props as Props
+---
+
+<article class='card card-side hover:bg-neutral-content/5 mb-6 transition hover:shadow-md'>
+    <div class='card-body'>
+        <h3>Educación</h3>
+    </div>
+</article>

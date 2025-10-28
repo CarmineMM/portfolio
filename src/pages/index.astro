@@ -4,6 +4,7 @@ import '../styles/global.css'
 import Resume from '@/page-sections/Resume.astro'
 import About from '@/page-sections/home/About.astro'
 import Experience from '@/page-sections/home/Experience.astro'
+import Education from '@/page-sections/home/Education.astro'
 
 const lang = 'es'
 ---
@@ -14,6 +15,7 @@ const lang = 'es'
         <section class='pt-16 md:col-span-3 md:px-4 lg:px-12 xl:px-24'>
             <About lang={lang} />
             <Experience lang={lang} />
+            <Education lang={lang} />
         </section>
     </div>
 </MainLayout>
