@@ -1,5 +1,15 @@
 {
     "presentation": "Systems Engineer and Full Stack Web/Mobile Developer.",
     "systems-engineer": "Systems Engineer",
-    "full-stack-developer": "Full Stack Web/Mobile Developer"
+    "full-stack-developer": "Full Stack Web/Mobile Developer",
+    "experience": {
+        "present": "Present",
+        "duration": {
+            "year": "year",
+            "years": "years",
+            "month": "month",
+            "months": "months",
+            "less-than-month": "less than a month"
+        }
+    }
 }

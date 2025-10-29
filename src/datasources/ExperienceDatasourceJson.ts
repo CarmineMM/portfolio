@@ -9,7 +9,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                 role: 'Desarrollador Web',
                 company: 'ASD Studio',
                 startDate: '2018-10-01',
-                endDate: '2023-12-31',
+                endDate: '2022-12-31',
                 description:
                     'Desarrollo de Aplicaciones y Sitios web informativos y BlogsDesarrollo de Aplicaciones y Sitios web informativos y Blogs',
                 technologies: [
@@ -50,6 +50,6 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     },
                 ],
             },
-        ])
+        ].reverse())
     }
 }

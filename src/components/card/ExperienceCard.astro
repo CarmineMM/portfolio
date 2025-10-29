@@ -6,13 +6,19 @@ interface Props extends PageSections {
     experience: Experience
 }
 
-const { experience } = Astro.props
+const { experience, lang } = Astro.props
 ---
 
-<article class='card card-side hover:bg-accent-content/5 mb-6 transition hover:shadow-md'>
+<article
+    class='card card-side hover:bg-accent-content/5 mb-6 items-start transition hover:shadow-md'
+>
     <!-- Right, years -->
-    <div class='card-body min-w-32 pr-1 text-xs uppercase'>
-        <p class='mt-1'>2020 - Present</p>
+    <div class='card-body min-w-28 pr-1'>
+        <p class='lg:tooltip mt-1 text-sm capitalize' data-tip={experience.getDuration(lang)}>
+            <span>{experience.getStartDateYear()}</span>
+            <span>-</span>
+            <span>{experience.getEndDateYear()}</span>
+        </p>
     </div>
     <div class='card-body'>
         <h3 class='card-title'>{experience.company}</h3>
