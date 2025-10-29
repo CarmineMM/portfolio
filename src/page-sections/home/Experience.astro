@@ -13,8 +13,5 @@ const experiences = await experienceData.getAllExperiences()
 ---
 
 <section class={classList} id='experience'>
-    <ExperienceCard lang={lang} title='Probando 1' />
-    <ExperienceCard lang={lang} title='Probando 2' />
-    <ExperienceCard lang={lang} title='Probando 3' />
-    <ExperienceCard lang={lang} title='Probando 4' />
+    {experiences.map((experience) => <ExperienceCard lang={lang} experience={experience} />)}
 </section>

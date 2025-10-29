@@ -1,25 +1,40 @@
 ---
+import type { Experience } from '@/entities/Experience'
 import type PageSections from '@/interfaces/PageSections'
 
 interface Props extends PageSections {
-    title: string
+    experience: Experience
 }
 
-const { title, lang } = Astro.props
+const { experience } = Astro.props
 ---
 
 <article class='card card-side hover:bg-accent-content/5 mb-6 transition hover:shadow-md'>
     <!-- Right, years -->
-    <div class='card-body max-w-40 pr-1 text-sm uppercase'>
+    <div class='card-body min-w-32 pr-1 text-xs uppercase'>
         <p class='mt-1'>2020 - Present</p>
     </div>
     <div class='card-body'>
-        <h3 class='card-title'>{title}</h3>
-        <h4>Subtitulo</h4>
-        <p>{lang}</p>
-        <span class='badge badge-sm'>
-            <a href=''>Javascript</a>
-        </span>
+        <h3 class='card-title'>{experience.company}</h3>
+        <h4>{experience.role}</h4>
+        {
+            experience.address && (
+                <p class='text-secondary-content! text-sm leading-0'>{experience.address}</p>
+            )
+        }
+        <p class='mt-2'>{experience.description}</p>
+
+        <div class='flex flex-wrap gap-2'>
+            {
+                experience.technologies.map((technology) => (
+                    <span class='badge badge-sm'>
+                        <a href={technology.webUrl} target='_blank' rel='noopener noreferrer'>
+                            {technology.name}
+                        </a>
+                    </span>
+                ))
+            }
+        </div>
     </div>
-    <a href='' class='absolute z-10 block h-full w-full'></a>
+    <!-- <a href='' class='absolute z-10 block h-full w-full'></a> -->
 </article>
