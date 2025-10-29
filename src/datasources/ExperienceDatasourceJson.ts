@@ -52,6 +52,55 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             webUrl: 'https://vuejs.org/',
             description: 'Vue.js',
         },
+        typescript: {
+            id: '8',
+            name: 'TypeScript',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
+            webUrl: 'https://www.typescriptlang.org/',
+            description: 'TypeScript',
+        },
+        postgreSQL: {
+            id: '9',
+            name: 'PostgreSQL',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg',
+            webUrl: 'https://www.postgresql.org/',
+            description: 'PostgreSQL',
+        },
+        mariaDB: {
+            id: '10',
+            name: 'MariaDB',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mariadb/mariadb-original.svg',
+            webUrl: 'https://mariadb.org/',
+            description: 'MariaDB',
+        },
+        react: {
+            id: '11',
+            name: 'React',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
+            webUrl: 'https://reactjs.org/',
+            description: 'React',
+        },
+        reactNative: {
+            id: '12',
+            name: 'React Native',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
+            webUrl: 'https://reactnative.dev/',
+            description: 'React Native',
+        },
+        nodejs: {
+            id: '13',
+            name: 'Node.js',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg',
+            webUrl: 'https://nodejs.org/',
+            description: 'Node.js',
+        },
+        express: {
+            id: '14',
+            name: 'Express.js',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg',
+            webUrl: 'https://expressjs.com/',
+            description: 'Express.js',
+        }
     }
 
     async findAll(): Promise<ExperienceRecord[]> {
@@ -71,6 +120,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.php,
                         this.technologies.codeIgniter,
                         this.technologies.wordpress,
+                        this.technologies.mariaDB,
                     ],
                 },
                 {
@@ -87,6 +137,25 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.php,
                         this.technologies.vue,
                         this.technologies.javascript,
+                        this.technologies.mariaDB,
+                        this.technologies.postgreSQL,
+                    ],
+                },
+                {
+                    id: '3',
+                    role: 'Ingeniero de Software',
+                    company: '3MIT.dev',
+                    companyWebsiteUrl: 'https://www.3mit.net/',
+                    startDate: '2022-10-01',
+                    endDate: '2024-09-16',
+                    description:
+                        'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                    technologies: [
+                        this.technologies.typescript,
+                        this.technologies.react,
+                        this.technologies.reactNative,
+                        this.technologies.nodejs,
+                        this.technologies.express,
                     ],
                 },
             ].reverse()
