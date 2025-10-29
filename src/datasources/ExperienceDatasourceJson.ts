@@ -135,6 +135,13 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg',
             webUrl: 'https://nextjs.org/',
             description: 'Next.js',
+        },
+        alpinejs: {
+            id: '20',
+            name: 'Alpine.js',
+            icon: 'https://alpinejs.dev/alpine_long.svg',
+            webUrl: 'https://alpinejs.dev/',
+            description: 'Alpine.js',
         }
     }
 
@@ -171,6 +178,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.wordpress,
                         this.technologies.php,
                         this.technologies.vue,
+                        this.technologies.alpinejs,
                         this.technologies.javascript,
                         this.technologies.mariaDB,
                         this.technologies.postgreSQL,
