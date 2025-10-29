@@ -100,6 +100,41 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg',
             webUrl: 'https://expressjs.com/',
             description: 'Express.js',
+        },
+        sqlServer: {
+            id: '15',
+            name: 'SQL Server',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
+            webUrl: 'https://www.microsoft.com/en-us/sql-server/',
+            description: 'SQL Server',
+        },
+        dart: {
+            id: '16',
+            name: 'Dart',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg',
+            webUrl: 'https://dart.dev/',
+            description: 'Dart',
+        },
+        flutter: {
+            id: '17',
+            name: 'Flutter',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg',
+            webUrl: 'https://flutter.dev/',
+            description: 'Flutter',
+        },
+        livewire: {
+            id: '18',
+            name: 'Livewire',
+            icon: '/assets/technologies/livewire-logo.png',
+            webUrl: 'https://laravel-livewire.com/',
+            description: 'Livewire',
+        },
+        nextjs: {
+            id: '19',
+            name: 'Next.js',
+            icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg',
+            webUrl: 'https://nextjs.org/',
+            description: 'Next.js',
         }
     }
 
@@ -146,16 +181,41 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     role: 'Ingeniero de Software',
                     company: '3MIT.dev',
                     companyWebsiteUrl: 'https://www.3mit.net/',
+                    companyLogoUrl: 'https://www.3mit.net/web/image/website/1/logo/3MIT%20Website?unique=54ee966',
                     startDate: '2022-10-01',
                     endDate: '2024-09-16',
                     description:
                         'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
                     technologies: [
                         this.technologies.typescript,
+                        this.technologies.javascript,
                         this.technologies.react,
                         this.technologies.reactNative,
                         this.technologies.nodejs,
                         this.technologies.express,
+                    ],
+                },
+                {
+                    id: '4',
+                    role: 'Consultor Desarrollador de Software',
+                    company: 'Tiendas Daka',
+                    companyWebsiteUrl: 'https://tiendasdaka.com/',
+                    companyLogoUrl: 'https://tiendasdaka.com/img/logoF.webp',
+                    startDate: '2024-12-03',
+                    endDate: '2025-10-15',
+                    description:
+                        'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                    technologies: [
+                        this.technologies.laravel,
+                        this.technologies.livewire,
+                        this.technologies.typescript,
+                        this.technologies.react,
+                        this.technologies.nextjs,
+                        this.technologies.vue,
+                        this.technologies.postgreSQL,
+                        this.technologies.sqlServer,
+                        this.technologies.dart,
+                        this.technologies.flutter,
                     ],
                 },
             ].reverse()
