@@ -1,6 +1,7 @@
 export default class Technology {
     id: string = ''
     name: string = ''
+    icon: string = ''
     description: string = ''
     webUrl: string = ''
 
