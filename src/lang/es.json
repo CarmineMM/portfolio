@@ -10,6 +10,7 @@
     ],
     "experience": {
         "present": "Presente",
+        "technologies": "Tecnologías utilizadas",
         "duration": {
             "year": "año",
             "years": "años",
@@ -17,5 +18,35 @@
             "months": "meses",
             "less-than-month": "menos de un mes"
         }
+    },
+    "navigation": {
+        "primary": "Navegación principal",
+        "home": "Inicio",
+        "items": {
+            "about": "Sobre mí",
+            "experience": "Experiencia",
+            "education": "Educación"
+        }
+    },
+    "sections": {
+        "about": {
+            "title": "Sobre mí"
+        },
+        "experience": {
+            "title": "Experiencia"
+        },
+        "education": {
+            "title": "Educación"
+        }
+    },
+    "socials": {
+        "label": "Redes sociales",
+        "github": "GitHub de Carmine Maggio",
+        "linkedin": "LinkedIn de Carmine Maggio",
+        "instagram": "Instagram de Carmine Maggio",
+        "email": "Enviar correo a Carmine Maggio"
+    },
+    "a11y": {
+        "skip-to-content": "Saltar al contenido principal"
     }
 }

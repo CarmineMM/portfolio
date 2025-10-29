@@ -45,9 +45,47 @@ body {
     font-weight: 400;
 }
 
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 16px;
+    padding: 8px 12px;
+    background-color: hsl(210deg 10% 20%);
+    color: hsl(0deg 0% 100%);
+    z-index: 100;
+    border-radius: 6px;
+    transition: top 200ms ease-in-out;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
+
 /* Imports Utilities */
 @utility container {
     @apply mx-auto;
 }
 
 @import './titles.css';
+@import './cards.css';

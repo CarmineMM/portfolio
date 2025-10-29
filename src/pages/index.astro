@@ -9,13 +9,17 @@ import Education from '@/page-sections/home/Education.astro'
 const lang = 'es'
 ---
 
-<MainLayout>
-    <div class='container grid grid-cols-1 gap-4 md:grid-cols-5'>
+<MainLayout lang={lang}>
+    <main
+        id='main-content'
+        class='container grid grid-cols-1 gap-4 md:grid-cols-5'
+        aria-labelledby='resume-heading'
+    >
         <Resume lang={lang} />
         <section class='md:col-span-3 md:px-4 lg:px-12 xl:px-24'>
             <About lang={lang} />
             <Experience lang={lang} />
             <Education lang={lang} />
         </section>
-    </div>
+    </main>
 </MainLayout>

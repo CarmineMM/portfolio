@@ -12,18 +12,41 @@ interface Props extends PageSections {
 const { lang, classList = 'md:col-span-2 relative lg:max-h-screen' } = Astro.props as Props
 
 const homeUrl = getRelativeLocaleUrl(lang, '/')
+const navigationLabel = __('navigation.primary', { lng: lang })
+const navigationLinks = [
+    {
+        href: '#about',
+        label: __('navigation.items.about', { lng: lang }),
+    },
+    {
+        href: '#experience',
+        label: __('navigation.items.experience', { lng: lang }),
+    },
+    {
+        href: '#education',
+        label: __('navigation.items.education', { lng: lang }),
+    },
+]
+const navigationHomeLabel = __('navigation.home', { lng: lang })
 ---
 
 <section class={classList}>
     <div class='flex h-full py-6 md:py-16 lg:fixed lg:flex-col lg:justify-between'>
         <article>
-            <h1 class='h1'>Carmine Maggio</h1>
+            <h1 class='h1' id='resume-heading'>Carmine Maggio</h1>
             <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
             <h2 class='h4'>{__('full-stack-developer', { lng: lang })}.</h2>
-            <MainNavbar lang={lang} client:idle homeUrl={homeUrl} />
+            <MainNavbar
+                lang={lang}
+                client:idle
+                homeUrl={homeUrl}
+                label={navigationLabel}
+                links={navigationLinks}
+                homeLabel={navigationHomeLabel}
+            />
         </article>
-        <aside>
-            <Socials />
+        <aside aria-label={__('socials.label', { lng: lang })}>
+            <Socials lang={lang} />
         </aside>
     </div>
 </section>

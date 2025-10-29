@@ -142,7 +142,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             icon: 'https://alpinejs.dev/alpine_long.svg',
             webUrl: 'https://alpinejs.dev/',
             description: 'Alpine.js',
-        }
+        },
     }
 
     async findAll(): Promise<ExperienceRecord[]> {
@@ -189,7 +189,8 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     role: 'Ingeniero de Software',
                     company: '3MIT.dev',
                     companyWebsiteUrl: 'https://www.3mit.net/',
-                    companyLogoUrl: 'https://www.3mit.net/web/image/website/1/logo/3MIT%20Website?unique=54ee966',
+                    companyLogoUrl:
+                        'https://www.3mit.net/web/image/website/1/logo/3MIT%20Website?unique=54ee966',
                     startDate: '2022-10-01',
                     endDate: '2024-09-16',
                     description:

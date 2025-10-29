@@ -1,20 +1,33 @@
 ---
 import '../styles/global.css'
+import { __ } from '@config/i18n'
 
 interface Props {
     title?: string
     description?: string
     bodyClasses?: string
+    lang?: string
+    canonicalUrl?: string
+    ogImage?: string
+    twitterHandle?: string
 }
 
 const {
     title = 'Carmine Maggio - Desarrollador Web',
     description = 'Carmine Maggio: Desarrollador web especializado en Laravel, React y Flutter. Con experiencia en creación de aplicaciones web y móviles de alto rendimiento.',
     bodyClasses = '',
+    lang = 'es',
+    canonicalUrl,
+    ogImage,
+    twitterHandle,
 } = Astro.props as Props
+
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_US'
+const skipLinkLabel = __('a11y.skip-to-content', { lng: lang })
+const twitterSite = twitterHandle ? `@${twitterHandle.replace(/^@/, '')}` : undefined
 ---
 
-<html lang='es'>
+<html lang={lang}>
     <head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
@@ -28,9 +41,19 @@ const {
         <meta name='viewport' content='width=device-width' />
         <meta name='generator' content={Astro.generator} />
         {description && <meta name='description' content={description} />}
+        {canonicalUrl && <link rel='canonical' href={canonicalUrl} />}
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content={title} />
+        {description && <meta property='og:description' content={description} />}
+        <meta property='og:locale' content={ogLocale} />
+        {ogImage && <meta property='og:image' content={ogImage} />}
+        <meta name='twitter:card' content='summary_large_image' />
+        {twitterSite && <meta name='twitter:site' content={twitterSite} />}
+        {ogImage && <meta name='twitter:image' content={ogImage} />}
         <title>{title}</title>
     </head>
     <body class={bodyClasses}>
+        <a class='skip-link' href='#main-content'>{skipLinkLabel}</a>
         <slot />
     </body>
 </html>

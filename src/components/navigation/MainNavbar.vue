@@ -1,16 +1,42 @@
 <script setup>
 const props = defineProps({
-    lang: String,
-    homeUrl: String,
+    lang: {
+        type: String,
+        default: 'es',
+    },
+    homeUrl: {
+        type: String,
+        default: '#',
+    },
+    label: {
+        type: String,
+        default: 'Navigation',
+    },
+    homeLabel: {
+        type: String,
+        default: 'Home',
+    },
+    links: {
+        type: Array,
+        default: () => [],
+    },
 })
 </script>
 
 <template>
-    <nav class="text-secondary/70 mt-12 leading-8 xl:mt-16 xl:leading-10">
+    <nav class="text-secondary/70 mt-12 leading-8 xl:mt-16 xl:leading-10" :aria-label="props.label">
+        <h2 class="sr-only">{{ props.label }}</h2>
         <ul>
-            <li><a href="#about" class="hover:text-secondary">About Me</a></li>
-            <li><a href="#experience" class="hover:text-secondary">Experience</a></li>
-            <li><a href="#education" class="hover:text-secondary">Education</a></li>
+            <li class="hidden">
+                <a :href="props.homeUrl" class="hover:text-secondary">
+                    {{ props.homeLabel }}
+                </a>
+            </li>
+            <li v-for="link in props.links" :key="link.href">
+                <a :href="link.href" class="hover:text-secondary">
+                    {{ link.label }}
+                </a>
+            </li>
         </ul>
     </nav>
 </template>

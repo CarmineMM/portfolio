@@ -1,31 +1,33 @@
 ---
 import type { Experience } from '@/entities/Experience'
 import type PageSections from '@/interfaces/PageSections'
+import { __ } from '@config/i18n'
 
 interface Props extends PageSections {
     experience: Experience
 }
 
-const { experience, lang } = Astro.props
-console.log(experience)
+const { experience, lang = 'es' } = Astro.props as Props
+const headingId = `experience-${experience.id}-heading`
+const technologiesLabel = __('experience.technologies', { lng: lang })
+const durationLabel = experience.getDuration(lang)
 ---
 
-<article
-    class='card card-side hover:bg-accent-content/5 mb-6 items-start transition hover:shadow-md'
->
-    <!-- Right, years -->
+<article class='card card-side experience-card' aria-labelledby={headingId}>
     <div class='card-body min-w-28 pr-1'>
         <p
             class='lg:tooltip xl:tooltip-left mt-1 text-sm capitalize'
-            data-tip={experience.getDuration(lang)}
+            data-tip={durationLabel}
+            aria-label={durationLabel}
         >
             <span>{experience.getStartDateYear()}</span>
             <span>-</span>
             <span>{experience.getEndDateYear()}</span>
+            <span class='sr-only'>{durationLabel}</span>
         </p>
     </div>
     <div class='card-body'>
-        <h3 class='card-title'>
+        <h3 class='card-title' id={headingId}>
             {
                 experience?.companyWebsiteUrl ? (
                     <a
@@ -33,6 +35,7 @@ console.log(experience)
                         target='_blank'
                         rel='noopener noreferrer'
                         class='link link-hover'
+                        title={experience.company}
                     >
                         {experience.company}
                     </a>
@@ -49,17 +52,21 @@ console.log(experience)
         }
         <p class='mt-2'>{experience.description}</p>
 
-        <div class='flex flex-wrap gap-2'>
+        <ul class='flex flex-wrap gap-2' aria-label={technologiesLabel}>
             {
                 experience.technologies.map((technology) => (
-                    <h6 class='badge badge-sm'>
-                        <a href={technology.webUrl} target='_blank' rel='noopener noreferrer'>
+                    <li class='badge badge-sm'>
+                        <a
+                            href={technology.webUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            title={technology.name}
+                        >
                             {technology.name}
                         </a>
-                    </h6>
+                    </li>
                 ))
             }
-        </div>
+        </ul>
     </div>
-    <!-- <a href='' class='absolute z-10 block h-full w-full'></a> -->
 </article>

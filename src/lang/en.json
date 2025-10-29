@@ -4,6 +4,7 @@
     "full-stack-developer": "Full Stack Web/Mobile Developer",
     "experience": {
         "present": "Present",
+        "technologies": "Technologies used",
         "duration": {
             "year": "year",
             "years": "years",
@@ -11,5 +12,35 @@
             "months": "months",
             "less-than-month": "less than a month"
         }
+    },
+    "navigation": {
+        "primary": "Primary navigation",
+        "home": "Home",
+        "items": {
+            "about": "About",
+            "experience": "Experience",
+            "education": "Education"
+        }
+    },
+    "sections": {
+        "about": {
+            "title": "About"
+        },
+        "experience": {
+            "title": "Experience"
+        },
+        "education": {
+            "title": "Education"
+        }
+    },
+    "socials": {
+        "label": "Social links",
+        "github": "Carmine Maggio on GitHub",
+        "linkedin": "Carmine Maggio on LinkedIn",
+        "instagram": "Carmine Maggio on Instagram",
+        "email": "Email Carmine Maggio"
+    },
+    "a11y": {
+        "skip-to-content": "Skip to main content"
     }
 }

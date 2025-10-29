@@ -8,12 +8,14 @@ interface Props extends PageSections {
 }
 
 const { lang, classList = 'pt-16' } = Astro.props as Props
+const sectionTitle = __('sections.about.title', { lng: lang })
 ---
 
-<article class={classList} id='about'>
+<section class={classList} id='about' aria-labelledby='about-heading'>
+    <h2 class='h2' id='about-heading'>{sectionTitle}</h2>
     {
         _.map(__('about-paragraphs', { lng: lang, returnObjects: true }), (paragraph: string) => (
             <p set:html={paragraph} />
         ))
     }
-</article>
+</section>

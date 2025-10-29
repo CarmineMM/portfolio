@@ -9,6 +9,6 @@ interface Props extends PageSections {
 const { lang, classList = 'mb-12 md:-mx-6 pt-16' } = Astro.props as Props
 ---
 
-<section class={classList} id='education'>
+<section class={classList} id='education' aria-labelledby='education-heading'>
     <EducationCard lang={lang} />
 </section>

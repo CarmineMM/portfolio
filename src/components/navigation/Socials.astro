@@ -1,31 +1,40 @@
 ---
 import { GithubIcon, LinkedinIcon, InstagramIcon, MailIcon } from 'astro-feather'
+import { __ } from '@config/i18n'
+
+interface Props {
+    lang?: string
+}
+
+const { lang = 'es' } = Astro.props as Props
 
 const links = [
     {
         icon: GithubIcon,
         href: 'https://github.com/CarmineMM',
+        label: __('socials.github', { lng: lang }),
     },
     {
         icon: LinkedinIcon,
         href: 'https://www.linkedin.com/in/carmine-maggio-157787144/',
+        label: __('socials.linkedin', { lng: lang }),
     },
     {
         icon: InstagramIcon,
         href: 'https://www.instagram.com/carmine_maggio/',
+        label: __('socials.instagram', { lng: lang }),
     },
     {
         icon: MailIcon,
         href: 'mailto:carminemaggiom@gmail.com',
+        label: __('socials.email', { lng: lang }),
     },
-    // {
-    //     icon: MessageCircleIcon,
-    //     href: 'https://wa.me/584244981009',
-    // },
 ]
+
+const navigationLabel = __('socials.label', { lng: lang })
 ---
 
-<nav class='flex gap-2' role='navigation' aria-label='Socials Links'>
+<nav class='flex gap-2' role='navigation' aria-label={navigationLabel}>
     {
         links.map((link) => (
             <a
@@ -33,6 +42,8 @@ const links = [
                 class='btn btn-circle btn-ghost'
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label={link.label}
+                title={link.label}
             >
                 <link.icon size={20} />
             </a>
