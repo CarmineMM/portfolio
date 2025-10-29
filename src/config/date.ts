@@ -1,5 +1,7 @@
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import 'dayjs/locale/es'
+import 'dayjs/locale/en'
 
 dayjs.extend(utc)
 

@@ -9,14 +9,14 @@ export default class ExperienceRepository {
         // ...
     }
 
-    async findAll(): Promise<Experience[]> {
+    async findAll(lang: string = 'es'): Promise<Experience[]> {
         const experiences = await this.datasource.findAll()
 
         return experiences.map((experience: ExperienceRecord) =>
             new Experience({
                 ...experience,
-                startDate: dayjs.utc(experience.startDate),
-                endDate: dayjs.utc(experience.endDate),
+                startDate: dayjs.utc(experience.startDate).locale(lang),
+                endDate: dayjs.utc(experience.endDate).locale(lang),
                 technologies: experience.technologies.map(
                     (technology) => new Technology(technology)
                 ),

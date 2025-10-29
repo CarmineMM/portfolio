@@ -1,13 +1,15 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
 import ExperienceCard from '@components/card/ExperienceCard.astro'
-import experienceRepository from '@/repositories/ExperienceRepository'
+import experienceImplementer from '@/implementers/ExperienceImplementer'
 
 interface Props extends PageSections {
     classList?: string
 }
 
 const { lang, classList = 'pt-16 md:-mx-6' } = Astro.props as Props
+const experienceData = new experienceImplementer(lang)
+const experiences = await experienceData.getAllExperiences()
 ---
 
 <section class={classList} id='experience'>
