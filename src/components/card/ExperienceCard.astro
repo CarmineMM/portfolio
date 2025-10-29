@@ -25,20 +25,22 @@ console.log(experience)
         </p>
     </div>
     <div class='card-body'>
-        {
-            experience?.companyWebsiteUrl ? (
-                <a
-                    href={experience.companyWebsiteUrl}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='card-title link link-hover'
-                >
-                    {experience.company}
-                </a>
-            ) : (
-                <h3 class='card-title'>{experience.company}</h3>
-            )
-        }
+        <h3 class='card-title'>
+            {
+                experience?.companyWebsiteUrl ? (
+                    <a
+                        href={experience.companyWebsiteUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='link link-hover'
+                    >
+                        {experience.company}
+                    </a>
+                ) : (
+                    experience.company
+                )
+            }
+        </h3>
         <h4>{experience.role}</h4>
         {
             experience.address && (
@@ -50,11 +52,11 @@ console.log(experience)
         <div class='flex flex-wrap gap-2'>
             {
                 experience.technologies.map((technology) => (
-                    <span class='badge badge-sm'>
+                    <h6 class='badge badge-sm'>
                         <a href={technology.webUrl} target='_blank' rel='noopener noreferrer'>
                             {technology.name}
                         </a>
-                    </span>
+                    </h6>
                 ))
             }
         </div>
