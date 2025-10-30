@@ -1,4 +1,4 @@
-import type { EducationRecord } from '@/contracts/datasources/EducationContract';
+import type { EducationRecord } from '@/contracts/datasources/EducationContract'
 
 export default class EducationDatasourceJson {
     async findAll(): Promise<EducationRecord[]> {

@@ -7,11 +7,11 @@ interface Props extends PageSections {
     classList?: string
 }
 
-const { lang, classList = 'mb-12 md:-mx-6 pt-16' } = Astro.props as Props
+const { lang, classList = 'mb-12 md:-mx-6' } = Astro.props as Props
 const educationData = new EducationImplementer(lang)
 const educations = await educationData.getAllEducations()
 ---
 
-<section class={classList} id='education' aria-labelledby='education-heading'>
+<section class={classList} aria-labelledby='education-heading'>
     {educations.map((education) => <EducationCard lang={lang} education={education} />)}
 </section>

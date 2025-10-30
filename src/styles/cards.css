@@ -5,3 +5,7 @@
 .experience-card {
     @apply hover:bg-accent-content/5 mb-6 items-start hover:shadow-md;
 }
+
+.education-card {
+    @apply hover:bg-neutral-content/5 mb-6 transition hover:shadow-md;
+}

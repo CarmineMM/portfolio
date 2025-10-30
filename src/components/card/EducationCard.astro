@@ -1,21 +1,30 @@
 ---
 import type { Education } from '@/entities/Education'
 import type PageSections from '@/interfaces/PageSections'
-import { __ } from '@config/i18n'
+import { MinusIcon } from 'astro-feather'
 
 interface Props extends PageSections {
     education: Education
 }
 
-const { lang, education } = Astro.props as Props
-const heading = __('sections.education.title', { lng: lang })
+const { education } = Astro.props as Props
 ---
 
 <article
-    class='card card-side hover:bg-neutral-content/5 mb-6 transition hover:shadow-md'
-    aria-labelledby='education-card-heading'
+    class='card card-side education-card'
+    aria-labelledby={`education-${education.id}-heading`}
 >
+    <div class='card-body min-w-28 pr-1'>
+        {education.logoUrl}
+    </div>
     <div class='card-body'>
-        <h3 class='card-title' id='education-card-heading'>{heading}</h3>
+        <h3 class='card-title'>{education.institution}</h3>
+        <h5 class='flex items-center gap-1'>
+            <span>{education.degree}</span>
+            <span><MinusIcon /></span>
+            <span>{education.fieldOfStudy}</span>
+        </h5>
+        <p class='text-info/50!'>2025 - 2025</p>
+        <p>{education.description}</p>
     </div>
 </article>
