@@ -50,9 +50,9 @@ const durationLabel = experience.getDuration(lang)
                 <p class='text-secondary-content! text-sm leading-0'>{experience.address}</p>
             )
         }
-        <p class='mt-2'>{experience.description}</p>
+        <p class='mt-2' set:html={experience.description} />
 
-        <ul class='flex lg:flex-wrap gap-2' aria-label={technologiesLabel}>
+        <ul class='flex gap-2 lg:flex-wrap' aria-label={technologiesLabel}>
             {
                 experience.technologies.map((technology) => (
                     <li class='badge badge-sm'>

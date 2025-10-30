@@ -143,6 +143,13 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             webUrl: 'https://alpinejs.dev/',
             description: 'Alpine.js',
         },
+        medusaJS: {
+            id: '21',
+            name: 'MedusaJS',
+            icon: '',
+            webUrl: 'https://medusajs.com/',
+            description: 'MedusaJS',
+        }
     }
 
     async findAll(): Promise<ExperienceRecord[]> {
@@ -174,7 +181,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     id: '2',
                     role: {
                         es: 'Programador Web',
-                        en: 'Web Programmer'
+                        en: 'Web Programmer',
                     },
                     company: 'Freelancer',
                     startDate: '2018-10-01',
@@ -231,8 +238,8 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     startDate: '2024-12-03',
                     endDate: '2025-10-15',
                     description: {
-                        es: 'Dentro del grupo Daka, se realizaron proyecto internos ',
-                        en: '',
+                        es: 'En Tiendas Daka, participe el desarrollo de múltiples proyectos internos, incluyendo una aplicación móvil en <b>Flutter</b> para servicio técnico, plataformas web en <b>Laravel</b> y <b>Livewire</b> para clientes y administración, y un sistema administrativo con <b>FilamentPHP</b>. Implementé un servicio en <b>Node.js</b> para sincronización entre bases de datos <b>SQL Server</b> y <b>PostgreSQL</b>. Además, se desarrollo un formulario en <b>Laravel</b> y <b>Livewire</b> utilizado por más de 300,000 usuarios y <b>lidere</b> la tienda e-commerce en <b>React</b>, <b>Next.js</b> y <b>MedusaJS</b> con <b>PostgreSQL</b>.',
+                        en: 'At Tiendas Daka, I participated in the development of multiple internal projects, including a mobile application in <b>Flutter</b> for technical service, web platforms in <b>Laravel</b> and <b>Livewire</b> for clients and administration, and an administrative system with <b>FilamentPHP</b>. I implemented a service in <b>Node.js</b> for synchronization between <b>SQL Server</b> and <b>PostgreSQL</b> databases. In addition, I developed a form in <b>Laravel</b> and <b>Livewire</b> used by more than 300,000 users and <b>led</b> the e-commerce store in <b>React</b>, <b>Next.js</b> and <b>MedusaJS</b> with <b>PostgreSQL</b>.',
                     },
                     technologies: [
                         this.technologies.laravel,
@@ -245,6 +252,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.sqlServer,
                         this.technologies.dart,
                         this.technologies.flutter,
+                        this.technologies.medusaJS,
                     ],
                 },
             ].reverse()
