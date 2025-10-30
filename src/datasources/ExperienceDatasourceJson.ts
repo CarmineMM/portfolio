@@ -150,12 +150,17 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             [
                 {
                     id: '1',
-                    role: 'Desarrollador Web',
+                    role: {
+                        es: 'Desarrollador Web',
+                        en: 'Web Developer',
+                    },
                     company: 'ASD Studio',
                     startDate: '2018-10-01',
                     endDate: '2022-12-31',
-                    description:
-                        'Desarrollo de Aplicaciones y Sitios web informativos y BlogsDesarrollo de Aplicaciones y Sitios web informativos y Blogs',
+                    description: {
+                        es: 'Desarrollo de Sitios web informativos como blogs, landing page de promociones y pequeñas e-commerce de servicios digitales.',
+                        en: 'Development of informative websites such as blogs, landing pages for promotions and small e-commerce of digital services.',
+                    },
                     technologies: [
                         this.technologies.javascript,
                         this.technologies.jquery,
@@ -167,12 +172,17 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                 },
                 {
                     id: '2',
-                    role: 'Programador Web',
+                    role: {
+                        es: 'Programador Web',
+                        en: 'Web Programmer'
+                    },
                     company: 'Freelancer',
                     startDate: '2018-10-01',
                     endDate: '2024-10-31',
-                    description:
-                        'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                    description: {
+                        es: 'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                        en: 'As a freelance programmer I focused on e-commerce, management systems, blogs and landing pages.',
+                    },
                     technologies: [
                         this.technologies.laravel,
                         this.technologies.wordpress,
@@ -186,15 +196,20 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                 },
                 {
                     id: '3',
-                    role: 'Ingeniero de Software',
+                    role: {
+                        es: 'Ingeniero de Software',
+                        en: 'Software Engineer',
+                    },
                     company: '3MIT.dev',
                     companyWebsiteUrl: 'https://www.3mit.net/',
                     companyLogoUrl:
                         'https://www.3mit.net/web/image/website/1/logo/3MIT%20Website?unique=54ee966',
                     startDate: '2022-10-01',
                     endDate: '2024-09-16',
-                    description:
-                        'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                    description: {
+                        es: 'Se trabajo en una aplicación móvil, frontend y backend, llamada <b>Posmit</b> la cual contaba con la característica de ser Offline First. El objetivo principal es ser un <b>Punto de Venta</b> y <b>ERP</b> para el uso de PYMES y comercios en general.',
+                        en: 'Worked on a mobile application, frontend and backend, called <b>Posmit</b> which had the characteristic of being Offline First. The main objective is to be a <b>Point of Sale</b> and <b>ERP</b> for the use of SMEs and businesses in general.',
+                    },
                     technologies: [
                         this.technologies.typescript,
                         this.technologies.javascript,
@@ -206,14 +221,19 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                 },
                 {
                     id: '4',
-                    role: 'Consultor Desarrollador de Software',
+                    role: {
+                        es: 'Consultor Desarrollador de Software',
+                        en: 'Software Development Consultant',
+                    },
                     company: 'Tiendas Daka',
                     companyWebsiteUrl: 'https://tiendasdaka.com/',
                     companyLogoUrl: 'https://tiendasdaka.com/img/logoF.webp',
                     startDate: '2024-12-03',
                     endDate: '2025-10-15',
-                    description:
-                        'Como programador freelancer me enfocaba en e-commerce, sistemas de gestión, blogs y landing pages.',
+                    description: {
+                        es: 'Dentro del grupo Daka, se realizaron proyecto internos ',
+                        en: '',
+                    },
                     technologies: [
                         this.technologies.laravel,
                         this.technologies.livewire,

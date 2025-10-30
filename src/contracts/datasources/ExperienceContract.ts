@@ -1,3 +1,5 @@
+import type languages from '@/interfaces/Languages'
+
 export interface TechnologyRecord {
     id: string
     name: string
@@ -8,11 +10,11 @@ export interface TechnologyRecord {
 
 export interface ExperienceRecord {
     id: string
-    role: string
+    role: languages
     company: string
     startDate: string
     endDate: string
-    description: string
+    description: languages
     technologies: TechnologyRecord[]
 }
 
