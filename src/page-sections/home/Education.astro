@@ -1,4 +1,5 @@
 ---
+import EducationImplementer from '@/implementers/EducationImplementer'
 import type PageSections from '@/interfaces/PageSections'
 import EducationCard from '@components/card/EducationCard.astro'
 
@@ -7,8 +8,10 @@ interface Props extends PageSections {
 }
 
 const { lang, classList = 'mb-12 md:-mx-6 pt-16' } = Astro.props as Props
+const educationData = new EducationImplementer(lang)
+const educations = await educationData.getAllEducations()
 ---
 
 <section class={classList} id='education' aria-labelledby='education-heading'>
-    <EducationCard lang={lang} />
+    {educations.map((education) => <EducationCard lang={lang} education={education} />)}
 </section>

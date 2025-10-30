@@ -1,10 +1,13 @@
 ---
+import type { Education } from '@/entities/Education'
 import type PageSections from '@/interfaces/PageSections'
 import { __ } from '@config/i18n'
 
-interface Props extends PageSections {}
+interface Props extends PageSections {
+    education: Education
+}
 
-const { lang } = Astro.props as Props
+const { lang, education } = Astro.props as Props
 const heading = __('sections.education.title', { lng: lang })
 ---
 
