@@ -9,7 +9,7 @@ export class Experience {
     companyLogoUrl?: string
     companyWebsiteUrl?: string
     startDate: dayjs.Dayjs = {} as dayjs.Dayjs
-    endDate?: dayjs.Dayjs
+    endDate?: dayjs.Dayjs                                                           
     description: string = ''
     address?: string
     technologies: Technology[] = []
