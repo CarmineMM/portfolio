@@ -14,8 +14,12 @@ const { education } = Astro.props as Props
     class='card card-side education-card'
     aria-labelledby={`education-${education.id}-heading`}
 >
-    <div class='card-body min-w-28 pr-1'>
-        {education.logoUrl}
+    <div class='card-body min-w-28 items-center pr-1'>
+        <img
+            src={education.logoUrl}
+            alt='Logo de {education.institution}'
+            class='h-14 w-14 object-contain'
+        />
     </div>
     <div class='card-body'>
         <h3 class='card-title'>{education.institution}</h3>
@@ -24,7 +28,7 @@ const { education } = Astro.props as Props
             <span><MinusIcon /></span>
             <span>{education.fieldOfStudy}</span>
         </h5>
-        <p class='text-info/50!'>2025 - 2025</p>
+        <p class='text-info/50!'>{education.getStartDateYear()} - {education.getEndDateYear()}</p>
         <p>{education.description}</p>
     </div>
 </article>

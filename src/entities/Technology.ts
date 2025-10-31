@@ -1,9 +1,9 @@
 export default class Technology {
-    id: string = ''
-    name: string = ''
-    icon: string = ''
-    description: string = ''
-    webUrl: string = ''
+    public id: string = ''
+    public name: string = ''
+    public icon: string = ''
+    public description: string = ''
+    public webUrl: string = ''
 
     constructor(data: Partial<Technology>) {
         Object.assign(this, data)
