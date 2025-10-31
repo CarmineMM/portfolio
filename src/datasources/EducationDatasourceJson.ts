@@ -5,6 +5,44 @@ export default class EducationDatasourceJson {
         return Promise.resolve([
             {
                 id: '1',
+                institution: 'ArSistemas',
+                degree: {
+                    es: 'Programación informática',
+                    en: 'Computer Programming',
+                },
+                fieldOfStudy: {
+                    es: 'Diseño y desarrollo de web',
+                    en: 'Web Design and Development',
+                },
+                startDate: '2018-01-01',
+                endDate: '2018-01-01',
+                description: {
+                    es: 'HTML, CSS, CSS3, JavaScript, Bootstrap 4,  WordPress, Joomla, PHP, MySQL.',
+                    en: 'HTML, CSS, CSS3, JavaScript, Bootstrap 4,  WordPress, Joomla, PHP, MySQL.',
+                },
+                // logoUrl: '/assets/institutions/university-psm.png',
+            },
+            {
+                id: '2',
+                institution: 'Cisco Networking Academy',
+                degree: {
+                    es: 'Redes y seguridad informática',
+                    en: 'Computer Networking and Security',
+                },
+                fieldOfStudy: {
+                    es: 'CCNA1, CCNA R&S',
+                    en: 'CCNA1, CCNA R&S',
+                },
+                startDate: '2017-01-01',
+                endDate: '2018-01-01',
+                description: {
+                    es: 'Especialización en las estructuras y arquitecturas de Red más Actuales en el mercado. Desarrollos de Redes de pequeñas y medianas Empresas mediante la aplicación de conocimientos prácticos de routing, switching, aplicaciones de redes y protocolos.',
+                    en: 'Specialization in the most current Network structures and architectures in the market. Development of Networks for small and medium-sized Enterprises through the application of practical knowledge of routing, switching, network applications and protocols.',
+                },
+                logoUrl: '/assets/institutions/cisco_networking_academy_logo.jpeg',
+            },
+            {
+                id: '3',
                 institution: 'Instituto Universitario Politécnico Santiago Mariño',
                 degree: {
                     es: 'Ingeniería',
@@ -22,6 +60,6 @@ export default class EducationDatasourceJson {
                 },
                 logoUrl: '/assets/institutions/university-psm.png',
             }
-        ])
+        ].reverse())
     }
 }

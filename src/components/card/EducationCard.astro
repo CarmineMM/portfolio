@@ -1,25 +1,36 @@
 ---
 import type { Education } from '@/entities/Education'
 import type PageSections from '@/interfaces/PageSections'
-import { MinusIcon } from 'astro-feather'
+import { BookOpenIcon, MinusIcon } from 'astro-feather'
 
 interface Props extends PageSections {
     education: Education
 }
 
 const { education } = Astro.props as Props
+const startDate = education.getStartDateYear()
+const endDate = education.getEndDateYear()
+const isSameYear = startDate === endDate
 ---
 
 <article
     class='card card-side education-card'
     aria-labelledby={`education-${education.id}-heading`}
 >
-    <div class='card-body min-w-28 items-center pr-1'>
-        <img
-            src={education.logoUrl}
-            alt='Logo de {education.institution}'
-            class='h-14 w-14 object-contain'
-        />
+    <div class='card-body max-w-24 min-w-24 items-center pr-1'>
+        {
+            education.logoUrl ? (
+                <img
+                    src={education.logoUrl}
+                    alt={`${education.institution} logo`}
+                    class='max-h-16 object-contain'
+                />
+            ) : (
+                <div class='bg-info/10 flex h-16 w-16 items-center justify-center rounded-md'>
+                    <BookOpenIcon />
+                </div>
+            )
+        }
     </div>
     <div class='card-body'>
         <h3 class='card-title'>{education.institution}</h3>
@@ -28,7 +39,9 @@ const { education } = Astro.props as Props
             <span><MinusIcon /></span>
             <span>{education.fieldOfStudy}</span>
         </h5>
-        <p class='text-info/50!'>{education.getStartDateYear()} - {education.getEndDateYear()}</p>
-        <p>{education.description}</p>
+        <p class='text-info/50!'>
+            {isSameYear ? startDate : `${startDate} - ${endDate}`}
+        </p>
+        <p set:html={education.description} />
     </div>
 </article>
