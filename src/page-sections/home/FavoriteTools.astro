@@ -1,0 +1,11 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+
+interface Props extends PageSections {
+    classList?: string
+}
+
+const { classList } = Astro.props
+---
+
+<section aria-labelledby='favorite-tools-heading' id='favorite-tools' class={classList}></section>

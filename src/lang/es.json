@@ -25,7 +25,8 @@
         "items": {
             "about": "Sobre mí",
             "experience": "Experiencia",
-            "education": "Educación"
+            "education": "Educación",
+            "favorite-tools": "Herramientas Favoritas"
         }
     },
     "sections": {
@@ -37,6 +38,9 @@
         },
         "education": {
             "title": "Educación"
+        },
+        "favorite-tools": {
+            "title": "Herramientas Favoritas"
         }
     },
     "socials": {

@@ -149,6 +149,20 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
             icon: '',
             webUrl: 'https://medusajs.com/',
             description: 'MedusaJS',
+        },
+        hetzner: {
+            id: '22',
+            name: 'Hetzner',
+            icon: 'https://www.hetzner.com/favicon.ico',
+            webUrl: 'https://www.hetzner.com/',
+            description: 'Hetzner',
+        },
+        aws: {
+            id: '23',
+            name: 'AWS',
+            icon: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FArchivo%3AAmazon_Web_Services_Logo.svg&psig=AOvVaw01dQZux6dmu4BAJ0DuLrul&ust=1761968671495000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiqwvjCzZADFQAAAAAdAAAAABAE',
+            webUrl: 'https://aws.amazon.com/',
+            description: 'AWS',
         }
     }
 
@@ -199,6 +213,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.javascript,
                         this.technologies.mariaDB,
                         this.technologies.postgreSQL,
+                        this.technologies.hetzner,
                     ],
                 },
                 {
@@ -253,6 +268,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         this.technologies.dart,
                         this.technologies.flutter,
                         this.technologies.medusaJS,
+                        this.technologies.aws,
                     ],
                 },
             ].reverse()
