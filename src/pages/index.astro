@@ -11,7 +11,7 @@ import FavoriteTools from '@/page-sections/home/FavoriteTools.astro'
 const lang = 'es'
 ---
 
-<MainLayout lang={lang}>
+<MainLayout lang={lang} bodyClasses='tapestry-bg'>
     <main
         id='main-content'
         class='container grid grid-cols-1 gap-4 md:grid-cols-5'
@@ -24,7 +24,7 @@ const lang = 'es'
                 {__('sections.experience.title', { lng: lang })}
             </div>
             <Experience lang={lang} />
-            <div class='divider py-10' id='education'>
+            <div class='divider py-10' id='favorite-tools'>
                 {__('sections.favorite-tools.title', { lng: lang })}
             </div>
             <FavoriteTools lang={lang} />

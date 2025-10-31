@@ -4,8 +4,41 @@ import type PageSections from '@/interfaces/PageSections'
 interface Props extends PageSections {}
 
 const { lang } = Astro.props
+
+const tools = [
+    {
+        name: 'VSCode',
+        icon: 'https://camo.githubusercontent.com/e2df005ec657459c13a26dc8368b4b992b730061eac04240f64f16abbcdcba64/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f56535f436f64652d3030373844343f7374796c653d666f722d7468652d6261646765266c6f676f3d76697375616c73747564696f636f6465266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful code editor',
+    },
+    {
+        name: 'Postman',
+        icon: 'https://camo.githubusercontent.com/0772b6f19716b89b6350c8a577762200569827d33df92eb098cec16738b658c9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769742d4630353033333f7374796c653d666f722d7468652d6261646765266c6f676f3d676974266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful API testing tool',
+    },
+    {
+        name: 'Docker',
+        icon: 'https://camo.githubusercontent.com/a1b0d308fd81d69d6cb59b067d1aa0d24ad250494bbe15d7e00086315e77ce59/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f636b65722d3234393645443f7374796c653d666f722d7468652d6261646765266c6f676f3d646f636b6572266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful containerization tool',
+    },
+    {
+        name: 'Hetzner Cloud',
+        icon: 'https://camo.githubusercontent.com/37358b04b938f5a6040bcfefbe2e8f92dd27aef1786081fa73f19e44476f7695/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4865747a6e65722d4435304332443f7374796c653d666f722d7468652d6261646765266c6f676f3d6865747a6e6572266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful cloud hosting solution',
+    },
+    {
+        name: 'Github Actions',
+        icon: 'https://camo.githubusercontent.com/ddc5c9c7628370a22a9817e5cb418504823aaf06d094c1a3a50b8138e6d8089e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875625f416374696f6e732d3230383846463f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562616374696f6e73266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful CI/CD tool',
+    },
+    {
+        name: 'AWS',
+        icon: 'https://camo.githubusercontent.com/5331697ef62a561a1750f301a2becce5fcc017ad5a3277eb5dfedecc6a26fa30/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4157532d3233324633453f7374796c653d666f722d7468652d6261646765266c6f676f3d616d617a6f6e617773266c6f676f436f6c6f723d7768697465',
+        description: 'A powerful cloud hosting solution',
+    },
+]
 ---
 
-<article class='card card-side'>
-    <h1>Probar</h1>
+<article class='card card-side flex-wrap justify-center gap-3'>
+    {tools.map((tool) => <img src={tool.icon} alt={`${tool.name} logo`} />)}
 </article>

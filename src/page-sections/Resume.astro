@@ -1,5 +1,6 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
+import ThemeController from '@components/form/ThemeController.astro'
 import MainNavbar from '@components/navigation/MainNavbar.vue'
 import Socials from '@components/navigation/Socials.astro'
 import { __ } from '@config/i18n'
@@ -50,6 +51,7 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
             />
         </article>
         <aside aria-label={__('socials.label', { lng: lang })}>
+            <ThemeController />
             <Socials lang={lang} />
         </aside>
     </div>
