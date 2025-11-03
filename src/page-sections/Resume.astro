@@ -1,6 +1,7 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
 import ThemeController from '@components/form/ThemeController.astro'
+import LanguageSelection from '@components/navigation/LanguageSelection.vue'
 import MainNavbar from '@components/navigation/MainNavbar.vue'
 import Socials from '@components/navigation/Socials.astro'
 import { __ } from '@config/i18n'
@@ -51,8 +52,11 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
             />
         </article>
         <aside aria-label={__('socials.label', { lng: lang })}>
-            <ThemeController />
             <Socials lang={lang} />
+            <div class='flex items-center gap-4 xl:px-3'>
+                <ThemeController />
+                <LanguageSelection lang={lang} client:idle />
+            </div>
         </aside>
     </div>
 </section>

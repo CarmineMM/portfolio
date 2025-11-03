@@ -4,20 +4,24 @@ import env from '@config/environment'
 import es from '@/lang/es.json'
 import en from '@/lang/en.json'
 
+const languages = {
+    es: {
+        translation: es,
+    },
+    en: {
+        translation: en,
+    },
+}
+
 await i18next.use(LanguageDetector).init({
     debug: env.APP_DEBUG,
     supportedLngs: ['en', 'es'],
     fallbackLng: 'es',
-    resources: {
-        es: {
-            translation: es,
-        },
-        en: {
-            translation: en,
-        },
-    },
+    resources: languages,
 })
 
 const __ = i18next.t
 
-export { i18next, __ }
+const defaultLanguage = 'es'
+
+export { i18next, __, languages, defaultLanguage }

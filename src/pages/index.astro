@@ -5,10 +5,10 @@ import Resume from '@/page-sections/Resume.astro'
 import About from '@/page-sections/home/About.astro'
 import Experience from '@/page-sections/home/Experience.astro'
 import Education from '@/page-sections/home/Education.astro'
-import { __ } from '@config/i18n'
+import { __, defaultLanguage } from '@config/i18n'
 import FavoriteTools from '@/page-sections/home/FavoriteTools.astro'
 
-const lang = 'es'
+const lang = defaultLanguage
 ---
 
 <MainLayout lang={lang} bodyClasses='tapestry-bg'>
@@ -35,3 +35,12 @@ const lang = 'es'
         </section>
     </main>
 </MainLayout>
+
+<script>
+    // Detect Safari browser
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
+    if (isSafari) {
+        document.body.classList.remove('tapestry-bg')
+    }
+</script>
