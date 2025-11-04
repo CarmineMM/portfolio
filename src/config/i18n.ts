@@ -22,6 +22,6 @@ await i18next.use(LanguageDetector).init({
 
 const __ = i18next.t
 
-const defaultLanguage = 'es'
+const defaultLanguage = 'en'
 
 export { i18next, __, languages, defaultLanguage }

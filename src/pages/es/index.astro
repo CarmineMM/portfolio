@@ -1,1 +1,49 @@
-<h1>En español</h1>
+---
+import MainLayout from '@layouts/MainLayout.astro'
+import '../styles/global.css'
+import Resume from '@/page-sections/Resume.astro'
+import About from '@/page-sections/home/About.astro'
+import Experience from '@/page-sections/home/Experience.astro'
+import Education from '@/page-sections/home/Education.astro'
+import { __ } from '@config/i18n'
+import FavoriteTools from '@/page-sections/home/FavoriteTools.astro'
+
+const lang = 'es'
+---
+
+<MainLayout lang={lang} bodyClasses='tapestry-bg'>
+    <main
+        id='main-content'
+        class='container grid grid-cols-1 gap-4 lg:grid-cols-5'
+        aria-labelledby='resume-heading'
+    >
+        <Resume lang={lang} />
+        <section class='lg:col-span-3 lg:px-12 xl:px-24'>
+            <div class='divider pb-10 lg:hidden' id='favorite-tools'>
+                {__('sections.about.title', { lng: lang })}
+            </div>
+            <About lang={lang} />
+            <div id='experience' class='divider py-10'>
+                {__('sections.experience.title', { lng: lang })}
+            </div>
+            <Experience lang={lang} />
+            <div class='divider py-10' id='favorite-tools'>
+                {__('sections.favorite-tools.title', { lng: lang })}
+            </div>
+            <FavoriteTools lang={lang} />
+            <div class='divider py-10' id='education'>
+                {__('sections.education.title', { lng: lang })}
+            </div>
+            <Education lang={lang} />
+        </section>
+    </main>
+</MainLayout>
+
+<script>
+    // Detect Safari browser
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
+    if (isSafari) {
+        document.body.classList.remove('tapestry-bg')
+    }
+</script>
