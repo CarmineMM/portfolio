@@ -45,7 +45,7 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
 
 <section class={classList}>
     <div
-        class='flex h-full items-center justify-between py-6 lg:fixed lg:flex-col lg:items-start lg:py-16'
+        class='flex h-full flex-col justify-between py-6 sm:flex-row md:items-center lg:fixed lg:flex-col lg:items-start lg:py-16'
     >
         <article>
             <h1 class='h1' id='resume-heading'>Carmine Maggio</h1>
@@ -62,7 +62,7 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
         </article>
         <aside aria-label={__('socials.label', { lng: lang })}>
             <Socials lang={lang} />
-            <div class='flex items-center gap-4 xl:px-1'>
+            <div class='flex flex-row-reverse items-center gap-4 md:flex-row xl:px-1'>
                 <ThemeController />
                 <LanguageSelection lang={lang} client:idle />
             </div>

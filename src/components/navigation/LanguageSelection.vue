@@ -23,7 +23,7 @@ watch(langSelected, (newLang) => {
 </script>
 
 <template>
-    <select class="select select-sm" v-model="langSelected">
+    <select class="select select-sm w-full" v-model="langSelected">
         <option :value="key" v-for="key in Object.keys(languages)" :key="key">
             {{ languageCollection[key] }}
         </option>
