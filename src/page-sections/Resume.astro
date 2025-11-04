@@ -7,7 +7,7 @@ import DockMainNavbar from '@components/navigation/DockMainNavbar.vue'
 import Socials from '@components/navigation/Socials.astro'
 import { __ } from '@config/i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
-import { AwardIcon, PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
+import { AwardIcon, DownloadIcon, PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
 
 interface Props extends PageSections {
     classList?: string
@@ -61,6 +61,10 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
             />
         </article>
         <aside aria-label={__('socials.label', { lng: lang })}>
+            <a class='btn btn-outline' href={`/storage/${lang}/CV-Carmine-09-25-1.pdf`} download>
+                {__('download-resume', { lng: lang })}
+                <DownloadIcon size={16} />
+            </a>
             <Socials lang={lang} />
             <div class='flex flex-row-reverse items-center gap-4 md:flex-row xl:px-1'>
                 <ThemeController />
