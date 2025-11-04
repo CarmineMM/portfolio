@@ -11,7 +11,7 @@ const { lang, classList = 'lg:pt-16' } = Astro.props as Props
 const sectionTitle = __('sections.about.title', { lng: lang })
 ---
 
-<section class={classList} id='about' aria-labelledby='about-heading'>
+<section class={classList} aria-labelledby='about-heading' id='about'>
     <h2 class='h2 hidden lg:block' id='about-heading'>{sectionTitle}</h2>
     {
         _.map(__('about-paragraphs', { lng: lang, returnObjects: true }), (paragraph: string) => (

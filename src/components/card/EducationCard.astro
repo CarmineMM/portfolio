@@ -2,6 +2,7 @@
 import type { Education } from '@/entities/Education'
 import type PageSections from '@/interfaces/PageSections'
 import { BookOpenIcon, MinusIcon } from 'astro-feather'
+import EducationCardImage from './EducationCardImage.astro'
 
 interface Props extends PageSections {
     education: Education
@@ -17,23 +18,18 @@ const isSameYear = startDate === endDate
     class='card card-side education-card'
     aria-labelledby={`education-${education.id}-heading`}
 >
-    <div class='card-body max-w-24 min-w-24 items-center pr-1'>
-        {
-            education.logoUrl ? (
-                <img
-                    src={education.logoUrl}
-                    alt={`${education.institution} logo`}
-                    class='max-h-16 object-contain'
-                />
-            ) : (
-                <div class='bg-info/10 flex h-16 w-16 items-center justify-center rounded-md'>
-                    <BookOpenIcon />
-                </div>
-            )
-        }
+    <div class='card-body hidden max-w-24 min-w-24 items-center pr-1 md:block'>
+        <EducationCardImage logoUrl={education.logoUrl} institution={education.institution} />
     </div>
     <div class='card-body'>
-        <h3 class='card-title'>{education.institution}</h3>
+        <div class='flex items-center gap-3.5'>
+            <EducationCardImage
+                classList='md:hidden'
+                logoUrl={education.logoUrl}
+                institution={education.institution}
+            />
+            <h3 class='card-title'>{education.institution}</h3>
+        </div>
         <h5 class='flex items-center gap-1'>
             <span>{education.degree}</span>
             <span><MinusIcon /></span>

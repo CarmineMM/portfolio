@@ -14,7 +14,7 @@ const durationLabel = experience.getDuration(lang)
 ---
 
 <article class='card card-side experience-card' aria-labelledby={headingId}>
-    <div class='card-body min-w-28 pr-1'>
+    <div class='card-body hidden md:block md:min-w-28 md:pr-1'>
         <p
             class='lg:tooltip xl:tooltip-left mt-1 text-sm capitalize'
             data-tip={durationLabel}
@@ -45,6 +45,7 @@ const durationLabel = experience.getDuration(lang)
             }
         </h3>
         <h4>{experience.role}</h4>
+        <p class='capitalize'>{durationLabel}</p>
         {
             experience.address && (
                 <p class='text-secondary-content! text-sm leading-0'>{experience.address}</p>

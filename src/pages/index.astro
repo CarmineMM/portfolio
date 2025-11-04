@@ -14,12 +14,12 @@ const lang = defaultLanguage
 <MainLayout lang={lang} bodyClasses='tapestry-bg'>
     <main
         id='main-content'
-        class='container grid grid-cols-1 gap-4 lg:grid-cols-5'
+        class='container grid grid-cols-1 gap-4 pb-12 lg:grid-cols-5'
         aria-labelledby='resume-heading'
     >
         <Resume lang={lang} />
         <section class='lg:col-span-3 lg:px-12 xl:px-24'>
-            <div class='divider pb-10 lg:hidden' id='favorite-tools'>
+            <div class='divider pb-10 lg:hidden'>
                 {__('sections.about.title', { lng: lang })}
             </div>
             <About lang={lang} />
