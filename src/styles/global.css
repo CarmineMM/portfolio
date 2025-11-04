@@ -84,7 +84,7 @@ body {
 
 /* Imports Utilities */
 @utility container {
-    @apply mx-auto px-6;
+    @apply mx-auto px-3 lg:px-6;
 }
 
 @import './titles.css';

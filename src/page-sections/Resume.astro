@@ -11,7 +11,7 @@ interface Props extends PageSections {
     classList?: string
 }
 
-const { lang, classList = 'md:col-span-2 relative lg:max-h-screen' } = Astro.props as Props
+const { lang, classList = 'lg:col-span-2 relative lg:max-h-screen' } = Astro.props as Props
 
 const homeUrl = getRelativeLocaleUrl(lang, '/')
 const navigationLabel = __('navigation.primary', { lng: lang })
@@ -37,7 +37,9 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
 ---
 
 <section class={classList}>
-    <div class='flex h-full py-6 md:py-16 lg:fixed lg:flex-col lg:justify-between'>
+    <div
+        class='flex h-full items-center justify-between py-6 lg:fixed lg:flex-col lg:items-start lg:py-16'
+    >
         <article>
             <h1 class='h1' id='resume-heading'>Carmine Maggio</h1>
             <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>

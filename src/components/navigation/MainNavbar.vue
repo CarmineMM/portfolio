@@ -24,7 +24,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <nav class="text-secondary/70 mt-12 leading-8 xl:mt-16 xl:leading-10" :aria-label="props.label">
+    <nav
+        class="text-secondary/70 mt-12 hidden leading-8 lg:block xl:mt-16 xl:leading-10"
+        :aria-label="props.label"
+    >
         <h2 class="sr-only">{{ props.label }}</h2>
         <ul>
             <li class="hidden">

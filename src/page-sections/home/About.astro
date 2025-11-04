@@ -7,12 +7,12 @@ interface Props extends PageSections {
     classList?: string
 }
 
-const { lang, classList = 'pt-16' } = Astro.props as Props
+const { lang, classList = 'lg:pt-16' } = Astro.props as Props
 const sectionTitle = __('sections.about.title', { lng: lang })
 ---
 
 <section class={classList} id='about' aria-labelledby='about-heading'>
-    <h2 class='h2' id='about-heading'>{sectionTitle}</h2>
+    <h2 class='h2 hidden lg:block' id='about-heading'>{sectionTitle}</h2>
     {
         _.map(__('about-paragraphs', { lng: lang, returnObjects: true }), (paragraph: string) => (
             <p set:html={paragraph} />

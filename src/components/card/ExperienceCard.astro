@@ -26,7 +26,7 @@ const durationLabel = experience.getDuration(lang)
             <span class='sr-only'>{durationLabel}</span>
         </p>
     </div>
-    <div class='card-body'>
+    <div class='card-body overflow-hidden'>
         <h3 class='card-title' id={headingId}>
             {
                 experience?.companyWebsiteUrl ? (
@@ -52,7 +52,7 @@ const durationLabel = experience.getDuration(lang)
         }
         <p class='mt-2' set:html={experience.description} />
 
-        <ul class='flex gap-2 lg:flex-wrap' aria-label={technologiesLabel}>
+        <ul class='flex gap-2 overflow-auto pb-2 lg:flex-wrap' aria-label={technologiesLabel}>
             {
                 experience.technologies.map((technology) => (
                     <li class='badge badge-sm'>
@@ -61,6 +61,7 @@ const durationLabel = experience.getDuration(lang)
                             target='_blank'
                             rel='noopener noreferrer'
                             title={technology.name}
+                            class='text-nowrap'
                         >
                             {technology.name}
                         </a>
