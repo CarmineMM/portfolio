@@ -2,6 +2,11 @@
     "presentation": "Systems Engineer and Full Stack Web/Mobile Developer.",
     "systems-engineer": "Systems Engineer",
     "full-stack-developer": "Full Stack Web/Mobile Developer",
+    "about-paragraphs": [
+        "I am a <b>systems engineer</b> with experience in <b>web and mobile development.</b> I specialize in creating efficient and scalable applications using modern technologies.",
+        "I have skills in a variety of programming languages and frameworks, some of my favorites are <b>Laravel</b>, <b>Flutter</b>, and <b>React</b>.",
+        "My goal is to contribute to innovative projects and collaborate with talented teams to create solutions that have a positive impact."
+    ],
     "experience": {
         "present": "Present",
         "technologies": "Technologies used",
