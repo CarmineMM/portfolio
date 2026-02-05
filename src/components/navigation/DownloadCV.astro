@@ -1,0 +1,45 @@
+---
+import { __ } from '@config/i18n'
+import { CheckCircleIcon, DownloadIcon } from 'astro-feather'
+
+interface Props {
+    lang?: string
+}
+
+const { lang = 'es' } = Astro.props as Props
+
+const CVs = [
+    {
+        href: '/storage/{lang}/CV_12-25_FullStack.pdf',
+        title: 'FullStack',
+    },
+    {
+        href: '/storage/{lang}/CV_12-25_Laravel.pdf',
+        title: 'Laravel',
+    },
+    {
+        href: '/storage/{lang}/CV_12-25_React_React_Native.pdf',
+        title: 'React/React Native',
+    },
+];
+---
+
+<div class="dropdown dropdown-top">
+    <button class='btn btn-outline' tabindex="0" role="button">
+        { __('download-resume', { lng: lang }) }
+        <DownloadIcon size={16} />
+    </button>
+    <ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+        {
+            CVs.map((cv) => (
+                <li>
+                    <a href={cv.href.replace('{lang}', lang)} download class="flex items-center gap-2">
+                        <CheckCircleIcon size={16} />                
+                        {cv.title}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
