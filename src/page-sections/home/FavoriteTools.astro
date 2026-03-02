@@ -9,6 +9,6 @@ interface Props extends PageSections {
 const { classList, lang } = Astro.props
 ---
 
-<section aria-labelledby='favorite-tools-heading' id='favorite-tools' class={classList}>
+<section aria-labelledby='favorite-tools-heading' class={classList}>
     <FavoriteToolCard lang={lang} />
 </section>
