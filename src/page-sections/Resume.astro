@@ -3,12 +3,12 @@ import type PageSections from '@/interfaces/PageSections'
 import ThemeController from '@components/form/ThemeController.astro'
 import LanguageSelection from '@components/navigation/LanguageSelection.vue'
 import MainNavbar from '@components/navigation/MainNavbar.vue'
-import DockMainNavbar from '@components/navigation/DockMainNavbar.vue'
+import DockMainNavbar from '@components/navigation/DockMainNavbar.astro'
 import DownloadCV from '@components/navigation/DownloadCV.astro'
 import Socials from '@components/navigation/Socials.astro'
 import { __ } from '@config/i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
-import { AwardIcon,  PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
+import { AwardIcon, HomeIcon, PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
 
 interface Props extends PageSections {
     classList?: string
@@ -72,4 +72,10 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
     </div>
 </section>
 
-<DockMainNavbar lang={lang} links={navigationLinks} />
+<DockMainNavbar
+    lang={lang}
+    links={navigationLinks}
+    homeLabel={navigationHomeLabel}
+    homeIcon={HomeIcon}
+    homeUrl={homeUrl}
+/>

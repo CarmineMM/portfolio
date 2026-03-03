@@ -1,0 +1,180 @@
+---
+import { type Component } from 'astro/runtime/server/index.js'
+
+interface Link {
+    href: string
+    label: string
+    iconSvg: Component
+}
+
+interface Props {
+    lang: string
+    links: Link[]
+    homeLabel: string
+    homeIcon: Component
+    homeUrl: string
+}
+
+const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
+---
+
+<div id="dock-nav-assets" class="hidden">
+    {
+        links.map((link, index) => (
+            <div data-index={index} data-href={link.href} data-label={link.label}>
+                <div class="dock-icon-wrapper">
+                    <link.iconSvg class="size-[1em]" />
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+<div class="dock dock-md lg:hidden z-50">
+    <!-- 1. Home Button (Static) -->
+    <a id="dock-home" href={homeUrl}>
+        <HomeIcon class="size-[1em]" />
+        <span class="dock-label">{homeLabel}</span>
+    </a>
+
+    <!-- 2. Current Section (Interactive) -->
+    <a id="dock-current" href="#" class="transition-opacity duration-300 text-center">
+        <!-- Content injected by JS -->
+    </a>
+
+    <!-- 3. Next Section (Interactive) -->
+    <a id="dock-next" href="#" class="transition-opacity duration-300 text-center">
+         <!-- Content injected by JS -->
+    </a>
+</div>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        initDock()
+    })
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDock)
+    } else {
+        initDock()
+    }
+
+    function initDock() {
+        const assetsContainer = document.getElementById('dock-nav-assets')
+        if (!assetsContainer) return
+
+        const assetItems = Array.from(assetsContainer.children) as HTMLElement[]
+        const links = assetItems.map(item => ({
+            href: item.dataset.href,
+            label: item.dataset.label,
+            index: parseInt(item.dataset.index || '0')
+        }))
+
+        const btnHome = document.getElementById('dock-home')
+        const btnCurrent = document.getElementById('dock-current')
+        const btnNext = document.getElementById('dock-next')
+
+        if (!btnCurrent || !btnNext) return
+
+        const sections = links.map(l => {
+            const id = l.href?.substring(1)
+            return id ? document.getElementById(id) : null
+        }).filter(el => el !== null)
+
+        let currentIndex = 0
+
+        function getAssetHtml(index: number) {
+            const asset = assetsContainer!.querySelector(`[data-index="${index}"]`)
+            if (!asset) return null
+            const iconWrapper = asset.querySelector('.dock-icon-wrapper')
+            return iconWrapper ? iconWrapper.innerHTML : ''
+        }
+
+        function updateButtonContent(container: HTMLElement, linkData: any, iconHtml: string) {
+            const currentLabel = container.querySelector('.dock-label')?.textContent
+            if (currentLabel === linkData.label) return
+
+            container.style.opacity = '0'
+            
+            setTimeout(() => {
+                container.innerHTML = `
+                    ${iconHtml}
+                    <span class="dock-label">${linkData.label}</span>
+                `
+                container.style.opacity = '1'
+            }, 200)
+        }
+
+        function updateState(newIndex: number) {
+            const nextIndex = (newIndex + 1) % links.length
+            
+            const currentLink = links[newIndex]
+            const nextLink = links[nextIndex]
+            
+            const currentIcon = getAssetHtml(newIndex)
+            const nextIcon = getAssetHtml(nextIndex)
+
+            if (currentLink && currentIcon) {
+                btnCurrent!.setAttribute('href', currentLink.href!)
+                updateButtonContent(btnCurrent!, currentLink, currentIcon)
+            }
+
+            if (nextLink && nextIcon) {
+                btnNext!.setAttribute('href', nextLink.href!)
+                updateButtonContent(btnNext!, nextLink, nextIcon)
+            }
+        }
+
+        const initialIconCurrent = getAssetHtml(0)
+        const initialIconNext = getAssetHtml(1)
+        
+        if (links[0] && initialIconCurrent) {
+             btnCurrent.setAttribute('href', links[0].href!)
+             btnCurrent.innerHTML = `${initialIconCurrent}<span class="dock-label">${links[0].label}</span>`
+        }
+        if (links[1] && initialIconNext) {
+             btnNext.setAttribute('href', links[1].href!)
+             btnNext.innerHTML = `${initialIconNext}<span class="dock-label">${links[1].label}</span>`
+        }
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY + (window.innerHeight / 3)
+            const isHome = sections[0] && window.scrollY < (sections[0].offsetTop - (window.innerHeight / 2))
+
+            if (isHome) {
+                btnHome?.classList.add('dock-active')
+                btnCurrent?.classList.remove('dock-active')
+            } else {
+                btnHome?.classList.remove('dock-active')
+                btnCurrent?.classList.add('dock-active')
+            }
+            
+            let newIndex = 0
+            
+            sections.forEach((section, i) => {
+                if (section && section.offsetTop <= scrollY) {
+                    newIndex = i
+                }
+            })
+
+            if (newIndex !== currentIndex) {
+                currentIndex = newIndex
+                updateState(currentIndex)
+            }
+        }
+        
+        // Run once to set initial state
+        handleScroll()
+
+        let ticking = false
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    handleScroll()
+                    ticking = false
+                })
+                ticking = true
+            }
+        })
+    }
+</script>
