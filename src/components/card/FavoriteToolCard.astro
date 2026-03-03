@@ -1,5 +1,6 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
+import { __ } from '@config/i18n'
 
 interface Props extends PageSections {}
 
@@ -7,43 +8,54 @@ const { lang } = Astro.props
 
 const tools = [
     {
-        "name": "Rigels",
-        "icon": "https://img.shields.io/badge/RIGELS-0e1c40?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuNjIgNTM1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzAyLjk0IDM0My4wN0w0MTIuNjIgNTM1SDMxMC4zTDE1NS4xNSAyNjYuODNsNzkuNTguNjdRMjcwLjg1IDI2Ny41IDMwMi40NSAyMzUuNDJjMTguMDgtMTcuNDMgMjYuNzUtMzguNzkgMjYuNzUtNjMuNTMgMC0yNC4wOC04LjctNDQuODEtMjYuNzUtNjIuMlEyNzYuMzggODMuNjEgMjQwLjI2IDgzLjYxSDU2LjE3TDAgMGgyMzQuNzNjNDguODIgMCA5MSAxNy4zOSAxMjUuNzIgNTIuMTYgMzQuNzggMzUuNDUgNTIuMTcgNzYuOTEgNTIuMTcgMTI1LjczIDAgMzcuNDUtMTAgNzAuODgtMzEuNDMgMTAxYTE5Ny45IDE5Ny45IDAgMCAxLTY4LjUyIDY0LjE4eiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIwIDM0MS43MiAwIDUzNSA5Ni45IDUzNSAwIDM0MS43MiIvPjwvc3ZnPg==&logoColor=white",
-        "description": "Powerful cloud management and automation"
+        name: 'Rigels.io',
+        icon: 'https://img.shields.io/badge/RIGELS-0e1c40?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuNjIgNTM1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzAyLjk0IDM0My4wN0w0MTIuNjIgNTM1SDMxMC4zTDE1NS4xNSAyNjYuODNsNzkuNTguNjdRMjcwLjg1IDI2Ny41IDMwMi40NSAyMzUuNDJjMTguMDgtMTcuNDMgMjYuNzUtMzguNzkgMjYuNzUtNjMuNTMgMC0yNC4wOC04LjctNDQuODEtMjYuNzUtNjIuMlEyNzYuMzggODMuNjEgMjQwLjI2IDgzLjYxSDU2LjE3TDAgMGgyMzQuNzNjNDguODIgMCA5MSAxNy4zOSAxMjUuNzIgNTIuMTYgMzQuNzggMzUuNDUgNTIuMTcgNzYuOTEgNTIuMTcgMTI1LjczIDAgMzcuNDUtMTAgNzAuODgtMzEuNDMgMTAxYTE5Ny45IDE5Ny45IDAgMCAxLTY4LjUyIDY0LjE4eiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIwIDM0MS43MiAwIDUzNSA5Ni45IDUzNSAwIDM0MS43MiIvPjwvc3ZnPg==&logoColor=white',
+        description: __('tools.rigels.description', { lng: lang }),
+        url: 'https://rigels.ai',
     },
     {
-        "name": "VSCode",
-        "icon": "https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white",
-        "description": "A powerful code editor"
+        name: 'VSCode',
+        icon: 'https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white',
+        description: 'A powerful code editor',
+        url: 'https://code.visualstudio.com',
     },
     {
-        "name": "Postman",
-        "icon": "https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white",
-        "description": "A powerful API testing tool"
+        name: 'Postman',
+        icon: 'https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white',
+        description: 'A powerful API testing tool',
+        url: 'https://www.postman.com',
     },
     {
-        "name": "Docker",
-        "icon": "https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white",
-        "description": "A powerful containerization tool"
+        name: 'Docker',
+        icon: 'https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white',
+        description: 'A powerful containerization tool',
+        url: 'https://www.docker.com',
     },
     {
-        "name": "Hetzner Cloud",
-        "icon": "https://img.shields.io/badge/Hetzner-D50C2D?style=for-the-badge&logo=hetzner&logoColor=white",
-        "description": "A powerful cloud hosting solution"
+        name: 'Hetzner Cloud',
+        icon: 'https://img.shields.io/badge/Hetzner-D50C2D?style=for-the-badge&logo=hetzner&logoColor=white',
+        description: 'A powerful cloud hosting solution',
+        url: 'https://www.hetzner.com/cloud',
     },
     {
-        "name": "Github Actions",
-        "icon": "https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white",
-        "description": "A powerful CI/CD tool"
+        name: 'GitHub Actions',
+        icon: 'https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white',
+        description: 'A powerful CI/CD tool',
+        url: 'https://docs.github.com/en/actions',
     },
     {
-        "name": "AWS",
-        "icon": "https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white",
-        "description": "A powerful cloud hosting solution"
+        name: 'AWS',
+        icon: 'https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white',
+        description: 'A powerful cloud hosting solution',
+        url: 'https://aws.amazon.com',
     },
 ]
 ---
 
 <article class='card card-side flex-wrap justify-center gap-3'>
-    {tools.map((tool) => <img src={tool.icon} alt={`${tool.name} logo`} />)}
+    {tools.map((tool) => (
+        <a href={tool.url} target="_blank">
+            <img src={tool.icon} alt={`${tool.name} logo`} />
+        </a>
+    ))}
 </article>

@@ -52,5 +52,10 @@
     "a11y": {
         "skip-to-content": "Saltar al contenido principal"
     },
-    "download-resume": "Descargar CV"
+    "download-resume": "Descargar CV",
+    "tools": {
+        "rigels": {
+            "description": "Una herramienta para gestionar tus proyectos de manera eficiente."
+        }
+    }
 }

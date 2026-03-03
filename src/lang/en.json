@@ -48,5 +48,10 @@
     "a11y": {
         "skip-to-content": "Skip to main content"
     },
-    "download-resume": "Download Resume"
+    "download-resume": "Download Resume",
+    "tools": {
+        "rigels": {
+            "description": "A tool to manage your projects efficiently."
+        }
+    }
 }
