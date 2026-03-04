@@ -23,14 +23,17 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
 ---
 
 <nav
-    id="main-navbar"
-    class="text-secondary/70 mt-12 hidden leading-8 lg:block xl:mt-16 xl:leading-10"
+    id='main-navbar'
+    class='text-secondary/70 mt-12 hidden leading-8 lg:block xl:mt-16 xl:leading-10'
     aria-label={label}
 >
-    <h2 class="sr-only">{label}</h2>
-    <ul class="space-y-2">
-        <li class="hidden">
-            <a href={homeUrl} class="hover:text-secondary flex items-center gap-2 transition-colors duration-300">
+    <h2 class='sr-only'>{label}</h2>
+    <ul class='space-y-2'>
+        <li class='hidden'>
+            <a
+                href={homeUrl}
+                class='hover:text-secondary flex items-center gap-2 transition-colors duration-300'
+            >
                 {homeLabel}
             </a>
         </li>
@@ -40,12 +43,12 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
                     <a
                         href={link.href}
                         data-nav-link
-                        class="group flex items-center gap-3 hover:text-secondary transition-all duration-300"
+                        class='group hover:text-secondary flex items-center gap-3 transition-all duration-300'
                     >
-                        <span class="nav-icon opacity-50 group-hover:opacity-100 transition-opacity">
-                            <link.iconSvg width="1em" height="1em" />
+                        <span class='nav-icon opacity-50 transition-opacity group-hover:opacity-100'>
+                            <link.iconSvg width='1em' height='1em' />
                         </span>
-                        <span class="nav-label">{link.label}</span>
+                        <span class='nav-label'>{link.label}</span>
                     </a>
                 </li>
             ))
@@ -65,13 +68,15 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
         if (!navbar) return
 
         const navLinks = navbar.querySelectorAll('[data-nav-link]')
-        const sections = Array.from(navLinks).map(link => {
-            const href = link.getAttribute('href')
-            if (href && href.startsWith('#')) {
-                return document.getElementById(href.substring(1)) as HTMLElement
-            }
-            return null
-        }).filter(el => el !== null)
+        const sections = Array.from(navLinks)
+            .map((link) => {
+                const href = link.getAttribute('href')
+                if (href && href.startsWith('#')) {
+                    return document.getElementById(href.substring(1)) as HTMLElement
+                }
+                return null
+            })
+            .filter((el) => el !== null)
 
         /**
          * @function handleScroll
@@ -84,7 +89,7 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
                 if (index === currentSectionIndex) {
                     link.classList.add('active-link', 'text-secondary')
                 } else {
-                    link.classList.remove('active-link','text-secondary')
+                    link.classList.remove('active-link', 'text-secondary')
                 }
             })
         }
@@ -94,15 +99,19 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
 
         // Throttled scroll listener
         let ticking = false
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    handleScroll()
-                    ticking = false
-                })
-                ticking = true
-            }
-        }, { passive: true })
+        window.addEventListener(
+            'scroll',
+            () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll()
+                        ticking = false
+                    })
+                    ticking = true
+                }
+            },
+            { passive: true }
+        )
     }
 
     // Support for Astro View Transitions and regular loads

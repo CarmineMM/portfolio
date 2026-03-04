@@ -6,6 +6,7 @@ import MainNavbar from '@components/navigation/MainNavbar.astro'
 import DockMainNavbar from '@components/navigation/DockMainNavbar.astro'
 import DownloadCV from '@components/navigation/DownloadCV.astro'
 import Socials from '@components/navigation/Socials.astro'
+import _ from 'lodash'
 import { __ } from '@config/i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { AwardIcon, HomeIcon, PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
@@ -51,7 +52,17 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
         <article>
             <h1 class='h1' id='resume-heading'>Carmine Maggio</h1>
             <h4 class='h4'>{__('systems-engineer', { lng: lang })}.</h4>
-            <h2 class='h4'>{__('full-stack-developer', { lng: lang })}.</h2>
+            <!-- <h2 class='h4'>{__('full-stack-developer', { lng: lang })}.</h2> -->
+            <h2 class='text-rotate duration-20000'>
+                <span>
+                    {
+                        _.map(
+                            __('main-specializations', { lng: lang, returnObjects: true }),
+                            (specialization: string) => <span>{specialization}</span>
+                        )
+                    }
+                </span>
+            </h2>
             <MainNavbar
                 lang={lang}
                 homeUrl={homeUrl}
