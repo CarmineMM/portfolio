@@ -1,0 +1,10 @@
+/* Highlighting active section */
+.active-link {
+    @apply font-bold;
+}
+.active-link .nav-icon {
+    @apply scale-110 opacity-100;
+}
+.active-link .nav-label {
+    @apply translate-x-1;
+}

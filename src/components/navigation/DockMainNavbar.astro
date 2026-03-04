@@ -49,6 +49,12 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 </div>
 
 <script>
+    /**
+       * @file DockMainNavbar.astro script
+       * @description Mobile navigation dock component with scroll highlighting and icon support.
+       */
+     import { findCurrentSectionIndex, isAtTop } from '@helpers/navigation'
+
     document.addEventListener('astro:page-load', () => {
         initDock()
     })
@@ -78,7 +84,7 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 
         const sections = links.map(l => {
             const id = l.href?.substring(1)
-            return id ? document.getElementById(id) : null
+            return id ? document.getElementById(id) as HTMLElement : null
         }).filter(el => el !== null)
 
         let currentIndex = 0
@@ -138,10 +144,10 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
         }
 
         const handleScroll = () => {
-            const scrollY = window.scrollY + (window.innerHeight / 3)
-            const isHome = sections[0] && window.scrollY < (sections[0].offsetTop - (window.innerHeight / 2))
+            const currentSectionIndex = findCurrentSectionIndex(sections)
+            const atTop = isAtTop(sections[0])
 
-            if (isHome) {
+            if (atTop) {
                 btnHome?.classList.add('dock-active')
                 btnCurrent?.classList.remove('dock-active')
             } else {
@@ -149,16 +155,8 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
                 btnCurrent?.classList.add('dock-active')
             }
             
-            let newIndex = 0
-            
-            sections.forEach((section, i) => {
-                if (section && section.offsetTop <= scrollY) {
-                    newIndex = i
-                }
-            })
-
-            if (newIndex !== currentIndex) {
-                currentIndex = newIndex
+            if (currentSectionIndex !== -1 && currentSectionIndex !== currentIndex) {
+                currentIndex = currentSectionIndex
                 updateState(currentIndex)
             }
         }
@@ -175,6 +173,6 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
                 })
                 ticking = true
             }
-        })
+        }, { passive: true })
     }
 </script>

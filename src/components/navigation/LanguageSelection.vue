@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
-import { languages, defaultLanguage } from '@config/i18n'
+import { languages, defaultLanguage, i18next } from '@config/i18n'
 
 const props = defineProps({
     lang: {
@@ -21,40 +21,24 @@ const getTargetUrl = (targetLang) => {
 }
 
 onMounted(() => {
-    const savedLang = localStorage.getItem('user-lang')
-    const browserLang = navigator.language.split('-')[0]
+    // i18next has already run its detection logic via the imported configuration
+    const detectedLang = i18next.language
     const currentLang = props.lang
 
-    let targetLang = null
-
-    // 1. Check localStorage preference
-    if (savedLang && languages[savedLang]) {
-        if (savedLang !== currentLang) {
-            targetLang = savedLang
-        }
-    } 
-    // 2. Check browser language if no preference saved
-    else if (!savedLang) {
-        if (browserLang === 'es' && currentLang !== 'es') {
-            targetLang = 'es'
-        } else if (browserLang !== 'es' && currentLang === 'es') {
-            targetLang = 'en'
-        }
-    }
-
-    if (targetLang) {
-        // Prevent redirect loop if we are already there (though logic above should handle it)
-        if (targetLang !== currentLang) {
-             window.location.replace(getTargetUrl(targetLang))
-        }
+    // i18next handles localStorage (key: 'i18nextLng') and navigator detection automatically
+    // We just need to check if the detected language matches the current URL language
+    
+    // Ensure detectedLang is supported (it should be due to supportedLngs config, but safety check)
+    if (detectedLang && languages[detectedLang] && detectedLang !== currentLang) {
+        window.location.replace(getTargetUrl(detectedLang))
     }
 })
 
-watch(langSelected, (newLang) => {
+watch(langSelected, async (newLang) => {
     if (newLang === props.lang) return
     
-    // Save preference
-    localStorage.setItem('user-lang', newLang)
+    // Update i18next state which updates localStorage ('i18nextLng')
+    await i18next.changeLanguage(newLang)
     
     window.location.href = getTargetUrl(newLang)
 })

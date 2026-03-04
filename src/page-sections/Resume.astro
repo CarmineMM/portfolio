@@ -2,7 +2,7 @@
 import type PageSections from '@/interfaces/PageSections'
 import ThemeController from '@components/form/ThemeController.astro'
 import LanguageSelection from '@components/navigation/LanguageSelection.vue'
-import MainNavbar from '@components/navigation/MainNavbar.vue'
+import MainNavbar from '@components/navigation/MainNavbar.astro'
 import DockMainNavbar from '@components/navigation/DockMainNavbar.astro'
 import DownloadCV from '@components/navigation/DownloadCV.astro'
 import Socials from '@components/navigation/Socials.astro'
@@ -54,7 +54,6 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
             <h2 class='h4'>{__('full-stack-developer', { lng: lang })}.</h2>
             <MainNavbar
                 lang={lang}
-                client:idle
                 homeUrl={homeUrl}
                 label={navigationLabel}
                 links={navigationLinks}

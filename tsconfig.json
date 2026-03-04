@@ -8,6 +8,7 @@
             "@components/*": ["./src/components/*"],
             "@layouts/*": ["./src/layouts/*"],
             "@config/*": ["./src/config/*"],
+            "@helpers/*": ["./src/helpers/*"],
             "@/*": ["./src/*"]
         },
         "jsx": "preserve"
