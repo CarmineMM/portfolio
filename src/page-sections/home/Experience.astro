@@ -2,16 +2,21 @@
 import type PageSections from '@/interfaces/PageSections'
 import ExperienceCard from '@components/card/ExperienceCard.astro'
 import experienceImplementer from '@/implementers/ExperienceImplementer'
+import { __ } from '@config/i18n'
 
 interface Props extends PageSections {
     classList?: string
+    id?: string
 }
 
-const { lang, classList = 'md:-mx-6' } = Astro.props as Props
+const { lang, classList = 'md:-mx-6', id } = Astro.props as Props
 const experienceData = new experienceImplementer(lang)
 const experiences = await experienceData.getAllExperiences()
 ---
 
-<section class={classList} aria-labelledby='experience-heading'>
+<section id={id} class={classList} aria-labelledby='experience-heading'>
+    <div class='divider py-10'>
+        <h3>{__('sections.experience.title', { lng: lang })}</h3>
+    </div>
     {experiences.map((experience) => <ExperienceCard lang={lang} experience={experience} />)}
 </section>

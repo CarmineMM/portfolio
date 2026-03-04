@@ -19,22 +19,13 @@ const lang = defaultLanguage
     >
         <Resume lang={lang} />
         <section class='lg:col-span-3 lg:px-12 xl:px-24'>
-            <div class='divider pb-10 lg:hidden'>
-                {__('sections.about.title', { lng: lang })}
-            </div>
             <About lang={lang} />
-            <div id='experience' class='divider py-10'>
-                <h3>{__('sections.experience.title', { lng: lang })}</h3>
-            </div>
-            <Experience lang={lang} />
-            <div class='divider py-10' id='favorite-tools'>
-                <h3>{__('sections.favorite-tools.title', { lng: lang })}</h3>
-            </div>
-            <FavoriteTools lang={lang} />
-            <div class='divider py-10' id='education'>
-                <h3>{__('sections.education.title', { lng: lang })}</h3>
-            </div>
-            <Education lang={lang} />
+
+            <Experience lang={lang} id='experience' />
+
+            <FavoriteTools lang={lang} id='favorite-tools' />
+
+            <Education lang={lang} id='education' />
         </section>
     </main>
 </MainLayout>

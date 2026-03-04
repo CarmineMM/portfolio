@@ -1,14 +1,19 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
 import FavoriteToolCard from '@components/card/FavoriteToolCard.astro'
+import { __ } from '@config/i18n'
 
 interface Props extends PageSections {
     classList?: string
+    id?: string
 }
 
-const { classList, lang } = Astro.props
+const { classList, lang, id } = Astro.props
 ---
 
-<section aria-labelledby='favorite-tools-heading' class={classList}>
+<section id={id} aria-labelledby='favorite-tools-heading' class={classList}>
+    <div class='divider py-10'>
+        <h3>{__('sections.favorite-tools.title', { lng: lang })}</h3>
+    </div>
     <FavoriteToolCard lang={lang} />
 </section>
