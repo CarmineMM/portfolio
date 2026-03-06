@@ -18,9 +18,15 @@ const durationLabel = experience.getDuration(lang)
         <!-- Logo Url -->
         {
             experience.companyLogoUrl && (
-                <div class='w-17'>
-                    <img src={experience.companyLogoUrl} alt='' />
-                </div>
+                <a
+                    class='block w-17'
+                    href={experience.companyWebsiteUrl}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    title={experience.company}
+                >
+                    <img src={experience.companyLogoUrl} alt={experience.company} class='rounded' />
+                </a>
             )
         }
 
