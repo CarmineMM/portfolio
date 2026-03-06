@@ -35,7 +35,7 @@ const tools = [
         name: 'Hetzner Cloud',
         icon: 'https://img.shields.io/badge/Hetzner-D50C2D?style=for-the-badge&logo=hetzner&logoColor=white',
         description: 'A powerful cloud hosting solution',
-        url: 'https://www.hetzner.com/cloud',
+        url: 'https://hetzner.cloud/?ref=78heXd5pCb9w',
     },
     {
         name: 'GitHub Actions',
@@ -53,9 +53,11 @@ const tools = [
 ---
 
 <article class='card card-side flex-wrap justify-center gap-3'>
-    {tools.map((tool) => (
-        <a href={tool.url} target="_blank">
-            <img src={tool.icon} alt={`${tool.name} logo`} />
-        </a>
-    ))}
+    {
+        tools.map((tool) => (
+            <a href={tool.url} target='_blank'>
+                <img src={tool.icon} alt={`${tool.name} logo`} />
+            </a>
+        ))
+    }
 </article>
