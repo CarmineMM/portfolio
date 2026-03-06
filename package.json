@@ -16,17 +16,18 @@
         "@astrojs/vue": "^5.1.4",
         "@tailwindcss/vite": "^4.2.1",
         "astro": "^5.18.0",
-        "astro-feather": "^1.0.0",
         "dayjs": "^1.11.19",
         "feather-icons": "^4.29.2",
         "i18next": "^25.8.14",
         "i18next-browser-languagedetector": "^8.2.1",
         "lodash": "^4.17.23",
         "tailwindcss": "^4.2.1",
-        "vue": "^3.5.29"
+        "vue": "^3.5.29",
+        "vue-feather-icons": "^5.1.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.39.3",
+        "@types/feather-icons": "^4.29.4",
         "@types/lodash": "^4.17.24",
         "@typescript-eslint/eslint-plugin": "^8.56.1",
         "@typescript-eslint/parser": "^8.56.1",

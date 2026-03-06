@@ -1,14 +1,8 @@
 ---
-/**
- * @file MainNavbar.astro
- * @description Desktop navigation menu component with scroll highlighting and icon support.
- */
-import { type Component } from 'astro/runtime/server/index.js'
-
 interface Link {
     href: string
     label: string
-    iconSvg: Component
+    icon: string
 }
 
 interface Props {
@@ -19,7 +13,7 @@ interface Props {
     links: Link[]
 }
 
-const { lang, homeUrl, label, homeLabel, links } = Astro.props
+const { homeUrl, label, homeLabel, links } = Astro.props
 ---
 
 <nav
@@ -46,7 +40,7 @@ const { lang, homeUrl, label, homeLabel, links } = Astro.props
                         class='group hover:text-secondary flex items-center gap-3 transition-all duration-300'
                     >
                         <span class='nav-icon opacity-50 transition-opacity group-hover:opacity-100'>
-                            <link.iconSvg width='1em' height='1em' />
+                            <i data-feather={link.icon} class='w-5.5' />
                         </span>
                         <span class='nav-label'>{link.label}</span>
                     </a>

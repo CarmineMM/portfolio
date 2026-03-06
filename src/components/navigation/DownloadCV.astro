@@ -1,6 +1,5 @@
 ---
 import { __ } from '@config/i18n'
-import { CheckCircleIcon, DownloadIcon } from 'astro-feather'
 
 interface Props {
     lang?: string
@@ -21,20 +20,24 @@ const CVs = [
         href: '/storage/{lang}/CV_12-25_React_React_Native.pdf',
         title: 'React/React Native',
     },
-];
+]
 ---
 
-<div class="dropdown dropdown-top">
-    <button class='btn btn-outline' tabindex="0" role="button">
-        { __('download-resume', { lng: lang }) }
-        <DownloadIcon size={16} />
+<div class='dropdown dropdown-top'>
+    <button class='btn btn-outline' tabindex='0' role='button'>
+        {__('download-resume', { lng: lang })}
+        <i data-feather='download' class='w-4'></i>
     </button>
-    <ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+    <ul tabindex='-1' class='dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm'>
         {
             CVs.map((cv) => (
                 <li>
-                    <a href={cv.href.replace('{lang}', lang)} download class="flex items-center gap-2">
-                        <CheckCircleIcon size={16} />                
+                    <a
+                        href={cv.href.replace('{lang}', lang)}
+                        download
+                        class='flex items-center gap-2'
+                    >
+                        <i data-feather='check-circle' class='w-4' />
                         {cv.title}
                     </a>
                 </li>
@@ -42,4 +45,3 @@ const CVs = [
         }
     </ul>
 </div>
-

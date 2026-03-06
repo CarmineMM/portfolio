@@ -1,5 +1,4 @@
 ---
-import { GithubIcon, LinkedinIcon, InstagramIcon, MailIcon } from 'astro-feather'
 import { __ } from '@config/i18n'
 
 interface Props {
@@ -10,22 +9,22 @@ const { lang = 'es' } = Astro.props as Props
 
 const links = [
     {
-        icon: GithubIcon,
+        icon: 'github',
         href: 'https://github.com/CarmineMM',
         label: __('socials.github', { lng: lang }),
     },
     {
-        icon: LinkedinIcon,
+        icon: 'linkedin',
         href: 'https://www.linkedin.com/in/carmine-maggio-157787144/',
         label: __('socials.linkedin', { lng: lang }),
     },
     {
-        icon: InstagramIcon,
+        icon: 'instagram',
         href: 'https://www.instagram.com/carmine_maggio/',
         label: __('socials.instagram', { lng: lang }),
     },
     {
-        icon: MailIcon,
+        icon: 'mail',
         href: 'mailto:carminemaggiom@gmail.com',
         label: __('socials.email', { lng: lang }),
     },
@@ -45,7 +44,8 @@ const navigationLabel = __('socials.label', { lng: lang })
                 aria-label={link.label}
                 title={link.label}
             >
-                <link.icon size={20} />
+                <i data-feather={link.icon} class='w-5' />
+                {/* <link.icon size={20} /> */}
             </a>
         ))
     }

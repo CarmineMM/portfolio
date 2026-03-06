@@ -9,7 +9,6 @@ import Socials from '@components/navigation/Socials.astro'
 import _ from 'lodash'
 import { __ } from '@config/i18n'
 import { getRelativeLocaleUrl } from 'astro:i18n'
-import { AwardIcon, HomeIcon, PaperclipIcon, PenToolIcon, SpeakerIcon } from 'astro-feather'
 
 interface Props extends PageSections {
     classList?: string
@@ -23,23 +22,22 @@ const navigationLinks = [
     {
         href: '#about',
         label: __('navigation.items.about', { lng: lang }),
-        // pass the rendered SVG string so Vue components can insert it with v-html
-        iconSvg: PaperclipIcon,
+        icon: 'paperclip',
     },
     {
         href: '#experience',
         label: __('navigation.items.experience', { lng: lang }),
-        iconSvg: SpeakerIcon,
+        icon: 'speaker',
     },
     {
         href: '#favorite-tools',
         label: __('navigation.items.favorite-tools', { lng: lang }),
-        iconSvg: PenToolIcon,
+        icon: 'pen-tool',
     },
     {
         href: '#education',
         label: __('navigation.items.education', { lng: lang }),
-        iconSvg: AwardIcon,
+        icon: 'award',
     },
 ]
 const navigationHomeLabel = __('navigation.home', { lng: lang })
@@ -85,6 +83,6 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
     lang={lang}
     links={navigationLinks}
     homeLabel={navigationHomeLabel}
-    homeIcon={HomeIcon}
+    homeIcon='home'
     homeUrl={homeUrl}
 />

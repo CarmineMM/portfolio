@@ -1,6 +1,4 @@
 ---
-import { BookOpenIcon } from 'astro-feather'
-
 interface Props {
     logoUrl?: string
     institution?: string
@@ -24,7 +22,7 @@ const { logoUrl, institution, classList } = Astro.props
                 classList,
             ]}
         >
-            <BookOpenIcon />
+            <i data-feather='book-open' class='w-6' />
         </div>
     )
 }

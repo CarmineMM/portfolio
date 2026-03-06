@@ -1,7 +1,6 @@
 ---
 import type { Education } from '@/entities/Education'
 import type PageSections from '@/interfaces/PageSections'
-import { BookOpenIcon, MinusIcon } from 'astro-feather'
 import EducationCardImage from './EducationCardImage.astro'
 
 interface Props extends PageSections {
@@ -32,7 +31,7 @@ const isSameYear = startDate === endDate
         </div>
         <h5 class='flex items-center gap-1'>
             <span>{education.degree}</span>
-            <span><MinusIcon /></span>
+            <span><i data-feather='minus' class='w-4'></i></span>
             <span>{education.fieldOfStudy}</span>
         </h5>
         <p class='text-info/50!'>

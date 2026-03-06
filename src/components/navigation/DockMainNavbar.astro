@@ -1,64 +1,62 @@
 ---
-import { type Component } from 'astro/runtime/server/index.js'
-
 interface Link {
     href: string
     label: string
-    iconSvg: Component
+    icon: string
 }
 
 interface Props {
     lang: string
     links: Link[]
     homeLabel: string
-    homeIcon: Component
+    homeIcon: string
     homeUrl: string
 }
 
-const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
+const { links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 ---
 
-<div id="dock-nav-assets" class="hidden">
+<div id='dock-nav-assets' class='hidden'>
     {
         links.map((link, index) => (
             <div data-index={index} data-href={link.href} data-label={link.label}>
-                <div class="dock-icon-wrapper">
-                    <link.iconSvg class="size-[1em]" />
+                <div class='dock-icon-wrapper'>
+                    <i data-feather={link.icon} class='w-5' />
                 </div>
             </div>
         ))
     }
 </div>
 
-<div class="dock dock-md lg:hidden z-50">
+<div class='dock dock-md z-50 lg:hidden'>
     <!-- 1. Home Button (Static) -->
-    <a id="dock-home" href={homeUrl}>
-        <HomeIcon class="size-[1em]" />
-        <span class="dock-label">{homeLabel}</span>
+    <a id='dock-home' href={homeUrl}>
+        <i data-feather={HomeIcon} class='w-5'></i>
+        <span class='dock-label'>{homeLabel}</span>
     </a>
 
     <!-- 2. Current Section (Interactive) -->
-    <a id="dock-current" href="#" class="transition-opacity duration-300 text-center">
+    <a id='dock-current' href='#' class='text-center transition-opacity duration-300'>
         <!-- Content injected by JS -->
     </a>
 
     <!-- 3. Next Section (Interactive) -->
-    <a id="dock-next" href="#" class="transition-opacity duration-300 text-center">
-         <!-- Content injected by JS -->
+    <a id='dock-next' href='#' class='text-center transition-opacity duration-300'>
+        <!-- Content injected by JS -->
     </a>
 </div>
 
 <script>
     /**
-       * @file DockMainNavbar.astro script
-       * @description Mobile navigation dock component with scroll highlighting and icon support.
-       */
-     import { findCurrentSectionIndex, isAtTop } from '@helpers/navigation'
+     * @file DockMainNavbar.astro script
+     * @description Mobile navigation dock component with scroll highlighting and icon support.
+     */
+    import { findCurrentSectionIndex, isAtTop } from '@helpers/navigation'
 
     document.addEventListener('astro:page-load', () => {
         initDock()
     })
-    
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initDock)
     } else {
@@ -70,10 +68,10 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
         if (!assetsContainer) return
 
         const assetItems = Array.from(assetsContainer.children) as HTMLElement[]
-        const links = assetItems.map(item => ({
+        const links = assetItems.map((item) => ({
             href: item.dataset.href,
             label: item.dataset.label,
-            index: parseInt(item.dataset.index || '0')
+            index: parseInt(item.dataset.index || '0'),
         }))
 
         const btnHome = document.getElementById('dock-home')
@@ -82,10 +80,12 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 
         if (!btnCurrent || !btnNext) return
 
-        const sections = links.map(l => {
-            const id = l.href?.substring(1)
-            return id ? document.getElementById(id) as HTMLElement : null
-        }).filter(el => el !== null)
+        const sections = links
+            .map((l) => {
+                const id = l.href?.substring(1)
+                return id ? (document.getElementById(id) as HTMLElement) : null
+            })
+            .filter((el) => el !== null)
 
         let currentIndex = 0
 
@@ -101,7 +101,7 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
             if (currentLabel === linkData.label) return
 
             container.style.opacity = '0'
-            
+
             setTimeout(() => {
                 container.innerHTML = `
                     ${iconHtml}
@@ -113,10 +113,10 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 
         function updateState(newIndex: number) {
             const nextIndex = (newIndex + 1) % links.length
-            
+
             const currentLink = links[newIndex]
             const nextLink = links[nextIndex]
-            
+
             const currentIcon = getAssetHtml(newIndex)
             const nextIcon = getAssetHtml(nextIndex)
 
@@ -133,14 +133,14 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
 
         const initialIconCurrent = getAssetHtml(0)
         const initialIconNext = getAssetHtml(1)
-        
+
         if (links[0] && initialIconCurrent) {
-             btnCurrent.setAttribute('href', links[0].href!)
-             btnCurrent.innerHTML = `${initialIconCurrent}<span class="dock-label">${links[0].label}</span>`
+            btnCurrent.setAttribute('href', links[0].href!)
+            btnCurrent.innerHTML = `${initialIconCurrent}<span class="dock-label">${links[0].label}</span>`
         }
         if (links[1] && initialIconNext) {
-             btnNext.setAttribute('href', links[1].href!)
-             btnNext.innerHTML = `${initialIconNext}<span class="dock-label">${links[1].label}</span>`
+            btnNext.setAttribute('href', links[1].href!)
+            btnNext.innerHTML = `${initialIconNext}<span class="dock-label">${links[1].label}</span>`
         }
 
         const handleScroll = () => {
@@ -154,25 +154,29 @@ const { lang, links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
                 btnHome?.classList.remove('dock-active')
                 btnCurrent?.classList.add('dock-active')
             }
-            
+
             if (currentSectionIndex !== -1 && currentSectionIndex !== currentIndex) {
                 currentIndex = currentSectionIndex
                 updateState(currentIndex)
             }
         }
-        
+
         // Run once to set initial state
         handleScroll()
 
         let ticking = false
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    handleScroll()
-                    ticking = false
-                })
-                ticking = true
-            }
-        }, { passive: true })
+        window.addEventListener(
+            'scroll',
+            () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll()
+                        ticking = false
+                    })
+                    ticking = true
+                }
+            },
+            { passive: true }
+        )
     }
 </script>
