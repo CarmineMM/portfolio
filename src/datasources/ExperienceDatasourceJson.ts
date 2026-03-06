@@ -231,8 +231,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     },
                     company: '3MIT.dev',
                     companyWebsiteUrl: 'https://www.3mit.net/',
-                    companyLogoUrl:
-                        'https://www.3mit.net/web/image/website/1/logo/3MIT%20Website?unique=54ee966',
+                    companyLogoUrl: '/assets/companies-logos/logo-3mit.webp',
                     startDate: '2022-10-01',
                     endDate: '2024-09-16',
                     description: {
@@ -256,7 +255,7 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                     },
                     company: 'Tiendas Daka',
                     companyWebsiteUrl: 'https://tiendasdaka.com/',
-                    companyLogoUrl: 'https://tiendasdaka.com/img/logoF.webp',
+                    companyLogoUrl: '/assets/companies-logos/LOGODAKA.svg',
                     startDate: '2024-12-03',
                     endDate: '2025-10-15',
                     description: {
