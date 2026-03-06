@@ -1,6 +1,6 @@
 ---
 import type PageSections from '@/interfaces/PageSections'
-import ThemeController from '@components/form/ThemeController.astro'
+import ThemeController from '@components/form/ThemeController.vue'
 import LanguageSelection from '@components/navigation/LanguageSelection.vue'
 import MainNavbar from '@components/navigation/MainNavbar.astro'
 import DockMainNavbar from '@components/navigation/DockMainNavbar.astro'
@@ -72,7 +72,7 @@ const navigationHomeLabel = __('navigation.home', { lng: lang })
             <DownloadCV lang={lang} />
             <Socials lang={lang} />
             <div class='flex flex-row-reverse items-center gap-4 md:flex-row xl:px-1'>
-                <ThemeController />
+                <ThemeController client:load />
                 <LanguageSelection lang={lang} client:idle />
             </div>
         </aside>

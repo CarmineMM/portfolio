@@ -1,8 +1,8 @@
-.tapestry-bg {
+.theme-abyss .tapestry-bg {
     background: url('/assets/background/tapestry.png') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* .light-bg {
-    background-color: #f6f5f5;
-} */
+.theme-acid .tapestry-bg {
+    background: #f6f5f5;
+}

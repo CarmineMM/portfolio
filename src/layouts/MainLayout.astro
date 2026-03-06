@@ -51,6 +51,15 @@ const twitterSite = twitterHandle ? `@${twitterHandle.replace(/^@/, '')}` : unde
         {twitterSite && <meta name='twitter:site' content={twitterSite} />}
         {ogImage && <meta name='twitter:image' content={ogImage} />}
         <title>{title}</title>
+        
+        <!-- Inline script to apply theme as early as possible and avoid FOUC -->
+        <script is:inline>
+            (function() {
+                const savedTheme = localStorage.getItem('theme') || 'abyss';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.classList.add(`theme-${savedTheme}`);
+            })();
+        </script>
     </head>
     <body class={bodyClasses}>
         <a class='skip-link' href='#main-content'>{skipLinkLabel}</a>
