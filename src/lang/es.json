@@ -11,9 +11,12 @@
         "Desarrollador Javascript Full Stack"
     ],
     "about-paragraphs": [
-        "Soy un <b>ingeniero de sistemas</b> con experiencia en desarrollo <b>web y móvil.</b> Me especializo en crear aplicaciones eficientes y escalables utilizando tecnologías modernas.",
-        "Tengo habilidades en una variedad de lenguajes de programación y frameworks, alguno de mis favoritos son <b>Laravel</b>, <b>Flutter</b> y <b>React</b>.",
-        "Mi objetivo es contribuir a proyectos innovadores y colaborar con equipos talentosos para crear soluciones que tengan un impacto positivo."
+        "Soy un <b>desarrollador Full Stack</b> con más de <b>7 años de experiencia</b> construyendo aplicaciones web y móviles. Me especializo en <b>Laravel</b> en el backend y <b>React / React Native</b> en el frontend, y me siento cómodo siendo dueño de una funcionalidad de punta a punta, desde el diseño de la base de datos hasta el despliegue en producción.",
+        "He trabajado en aplicaciones que sirven usuarios reales a escala. En <b>Tiendas Daka</b>, contribuí a plataformas usadas por más de <b>2 millones de clientes</b>, incluyendo un formulario en Laravel y Livewire que manejó más de <b>300.000 usuarios</b> y un e-commerce construido con React, Next.js, NestJS y MedusaJS.",
+        "Me importa mucho la <b>arquitectura limpia y mantenible</b>. Prefiero diseños con lógica concentrada en el servidor, usando colas, jobs, WebSockets y APIs bien estructuradas en Laravel, para que el frontend sea liviano y el sistema sea fácil de evolucionar.",
+        "Más allá del empleo, opero <a href='rigels.io' target='_blank' class='font-bold link link-hover'>Rigels.io</a>, un servicio de hosting web personal construido sobre infraestructura de Hetzner, donde me encargo de todo: configuración del servidor (Nginx, PHP-FPM, SSL), backups y soporte a clientes. Me mantiene afilado en DevOps y me da experiencia real como operador independiente.",
+        "Actualmente estoy <b>abierto a nuevas oportunidades</b>, ya sea un rol a tiempo completo, contrato o colaboración en algo interesante. Trabajo bien en equipos ágiles, participo activamente en code reviews y estoy acostumbrado a escribir documentación que realmente ayuda.",
+        "Cuando no estoy programando, suelo estar explorando side projects, probando nuevas herramientas o pensando en sistemas. Si quieres ver en qué estoy trabajando, visita mi <a href='https://github.com/CarmineMM' target='_blank' rel='noopener noreferrer' class='link link-hover font-bold'>GitHub</a>."
     ],
     "experience": {
         "present": "Presente",
@@ -60,6 +63,8 @@
     "a11y": {
         "skip-to-content": "Saltar al contenido principal"
     },
+    "show-more": "Mostrar más",
+    "show-less": "Mostrar menos",
     "download-resume": "Descargar CV",
     "tools": {
         "rigels": {

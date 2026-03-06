@@ -11,9 +11,12 @@
         "Full Stack Javascript Developer"
     ],
     "about-paragraphs": [
-        "I am a <b>systems engineer</b> with experience in <b>web and mobile development.</b> I specialize in creating efficient and scalable applications using modern technologies.",
-        "I have skills in a variety of programming languages and frameworks, some of my favorites are <b>Laravel</b>, <b>Flutter</b>, and <b>React</b>.",
-        "My goal is to contribute to innovative projects and collaborate with talented teams to create solutions that have a positive impact."
+        "I'm a <b>Full Stack developer</b> with over <b>7 years of experience</b> building web and mobile applications. I specialize in <b>Laravel</b> on the backend and <b>React / React Native</b> on the frontend, and I'm comfortable owning a feature end-to-end — from database design to production deployment.",
+        "I've worked on applications that serve real users at scale. At <b>Tiendas Daka</b>, I contributed to platforms used by more than <b>2 million customers</b>, including a form in Laravel and Livewire that handled over <b>300,000 users</b> and an e-commerce project built with React, Next.js, NestJS and MedusaJS.",
+        "I care a lot about <b>clean, maintainable architecture</b>. I lean toward backend-heavy designs — keeping business logic on the server, using Laravel queues, jobs, WebSockets and well-structured APIs — so that frontends stay light and the system is easy to evolve.",
+        "Beyond employment, I run <b>Rigels.io</b>, a personal web hosting service built on Hetzner infrastructure, where I handle everything from server configuration (Nginx, PHP-FPM, SSL) to client support. It keeps me sharp on the DevOps side and gives me real skin in the game as a solo operator.",
+        "I'm currently <b>open to new opportunities</b> — whether that's a full-time role, a contract, or a collaboration on something interesting. I work well in agile teams, participate actively in code reviews, and I'm used to writing documentation that actually helps people.",
+        "When I'm not coding, I'm usually tinkering with side projects, exploring new tools, or thinking about systems. If you want to see what I'm building, check out my <a href='https://github.com/CarmineMM' target='_blank' rel='noopener noreferrer' class='link'>GitHub</a>."
     ],
     "experience": {
         "present": "Present",
@@ -56,6 +59,8 @@
     "a11y": {
         "skip-to-content": "Skip to main content"
     },
+    "show-more": "Show more",
+    "show-less": "Show less",
     "download-resume": "Download Resume",
     "tools": {
         "rigels": {

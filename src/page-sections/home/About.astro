@@ -9,8 +9,7 @@ interface Props extends PageSections {
 
 const { lang, classList = 'lg:pt-16' } = Astro.props as Props
 const sectionTitle = __('sections.about.title', { lng: lang })
-
-const showMoreButton = "<a href='#about-heading'>{__('show-more', { lng: lang })}</a>"
+const showMore = __('show-more', { lng: lang })
 ---
 
 <section class={classList} aria-labelledby='about-heading' id='about'>
@@ -19,10 +18,23 @@ const showMoreButton = "<a href='#about-heading'>{__('show-more', { lng: lang })
     </div>
     {
         _.map(
-            __('about-paragraphs', { lng: lang, returnObjects: true }),
-            (paragraph: string, index: number) => <p set:html={paragraph} />
+            _.take(__('about-paragraphs', { lng: lang, returnObjects: true }) as string[], 2),
+            (paragraph: string) => <p set:html={paragraph} />
         )
     }
-
-    {showMoreButton}
+    <div class='collapse -mb-4'>
+        <input type='checkbox' id='about-more' />
+        <div class='collapse-title p-0'>{showMore}</div>
+        <div class='collapse-content px-0'>
+            {
+                _.map(
+                    _.takeRight(
+                        __('about-paragraphs', { lng: lang, returnObjects: true }) as string[],
+                        4
+                    ),
+                    (paragraph: string) => <p set:html={paragraph} />
+                )
+            }
+        </div>
+    </div>
 </section>
