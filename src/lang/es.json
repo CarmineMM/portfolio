@@ -35,6 +35,7 @@
         "items": {
             "about": "Sobre mí",
             "experience": "Experiencia",
+            "projects": "Proyectos",
             "education": "Educación",
             "favorite-tools": "Herramientas Favoritas"
         }
@@ -46,12 +47,18 @@
         "experience": {
             "title": "Experiencia"
         },
+        "projects": {
+            "title": "Proyectos"
+        },
         "education": {
             "title": "Educación"
         },
         "favorite-tools": {
             "title": "Herramientas Favoritas"
         }
+    },
+    "projects": {
+        "visit": "Visitar proyecto"
     },
     "socials": {
         "label": "Redes sociales",

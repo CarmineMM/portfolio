@@ -1,0 +1,154 @@
+---
+import type Project from '@/entities/Project'
+import type PageSections from '@/interfaces/PageSections'
+import { __ } from '@config/i18n'
+
+interface Props extends PageSections {
+    project: Project
+}
+
+const { project, lang = 'es' } = Astro.props as Props
+const headingId = `project-${project.id}-heading`
+const technologiesLabel = __('experience.technologies', { lng: lang })
+const visitLabel = __('projects.visit', { lng: lang })
+const hasImages = project.images && project.images.length > 0
+---
+
+<article class='card project-card overflow-hidden' aria-labelledby={headingId}>
+    <div class='project-card-inner'>
+        <!-- Carrusel de imágenes -->
+        {
+            hasImages && (
+                <div
+                    class='project-carousel'
+                    x-data={`{
+                        active: 0,
+                        images: ${JSON.stringify(project.images)},
+                        init() {
+                            setInterval(() => {
+                                this.active = (this.active + 1) % this.images.length
+                            }, 3000)
+                        }
+                    }`}
+                >
+                    {project.images.map((img, i) => (
+                        <div
+                            class='project-carousel-slide'
+                            x-show={`active === ${i}`}
+                            x-transition:enter='transition-opacity duration-700'
+                            x-transition:enter-start='opacity-0'
+                            x-transition:enter-end='opacity-100'
+                            x-transition:leave='transition-opacity duration-700'
+                            x-transition:leave-start='opacity-100'
+                            x-transition:leave-end='opacity-0'
+                        >
+                            <img
+                                src={img}
+                                alt={`${project.name} screenshot ${i + 1}`}
+                                class='project-carousel-img'
+                                loading='lazy'
+                            />
+                        </div>
+                    ))}
+                </div>
+            )
+        }
+
+        <!-- Contenido -->
+        <div class='project-card-body card-body'>
+            <h3 class='card-title' id={headingId}>
+                <a
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='link link-hover'
+                >
+                    {project.name}
+                </a>
+            </h3>
+
+            <p class='mt-2 text-sm' set:html={project.description} />
+
+            <div class='mt-auto pt-4'>
+                <ul class='flex flex-wrap gap-2 pb-3' aria-label={technologiesLabel}>
+                    {
+                        project.technologies.map((technology) => (
+                            <li class='badge badge-sm'>
+                                <a
+                                    href={technology.webUrl}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    title={technology.name}
+                                    class='text-nowrap'
+                                >
+                                    {technology.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <a
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='btn btn-sm btn-outline'
+                >
+                    {visitLabel} ↗
+                </a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<style>
+    .project-card {
+        border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+        transition: border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+        border-color: color-mix(in srgb, currentColor 28%, transparent);
+    }
+
+    .project-card-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .project-card-inner {
+            grid-template-columns: 280px 1fr;
+        }
+    }
+
+    .project-carousel {
+        position: relative;
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        min-height: 200px;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+        .project-carousel {
+            min-height: 240px;
+        }
+    }
+
+    .project-carousel-slide {
+        position: absolute;
+        inset: 0;
+    }
+
+    .project-carousel-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .project-card-body {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
