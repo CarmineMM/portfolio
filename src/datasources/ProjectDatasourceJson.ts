@@ -30,6 +30,7 @@ export default class ProjectDatasourceJson extends ProjectContract {
                     technologies.alpinejs,
                     technologies.tailwindcss,
                     technologies.rigels,
+                    technologies.postgreSQL,
                 ],
             },
             {
@@ -44,8 +45,9 @@ export default class ProjectDatasourceJson extends ProjectContract {
                 },
                 url: 'https://tiendasdaka.com',
                 images: [
-                    '/assets/projects/daka-1.png',
-                    '/assets/projects/daka-2.png',
+                    '/assets/projects/daka/daka-1.png',
+                    '/assets/projects/daka/daka-2.png',
+                    '/assets/projects/daka/daka-3.png',
                 ],
                 technologies: [
                     technologies.typescript,
@@ -66,10 +68,10 @@ export default class ProjectDatasourceJson extends ProjectContract {
                     es: '<b>Posmit</b> es un sistema <b>ERP con punto de venta</b> diseñado para PYMES, con una característica diferenciadora clave: funciona <b>sin internet</b>. La app sincroniza datos con el servidor cuando hay conexión disponible, pero continúa operando completamente con datos locales si la red falla — ideal para comercios en zonas con conectividad inestable. El sistema evolucionó de un simple POS a un ERP completo con integración a <b>Odoo</b>. Desarrollado como aplicación móvil en <b>React Native</b> y plataforma web en <b>React</b>, con backend en <b>Node.js</b>.',
                     en: '<b>Posmit</b> is an <b>ERP with point of sale</b> designed for SMEs, with one key differentiator: it works <b>offline</b>. The app syncs data with the server when a connection is available, but continues operating entirely on local data if the network fails — ideal for businesses in areas with unstable connectivity. The system evolved from a simple POS into a full ERP with <b>Odoo</b> integration. Built as a mobile app in <b>React Native</b> and a web platform in <b>React</b>, with a <b>Node.js</b> backend.',
                 },
-                url: 'https://www.3mit.net/',
+                url: 'https://posmit.app/',
                 images: [
-                    '/assets/projects/posmit-1.png',
-                    '/assets/projects/posmit-2.png',
+                    '/assets/projects/posmit/1.png',
+                    '/assets/projects/posmit/2.png',
                 ],
                 technologies: [
                     technologies.javascript,
