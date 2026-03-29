@@ -17,9 +17,8 @@ export default class ProjectDatasourceJson extends ProjectContract {
                 },
                 url: 'https://rigels.io',
                 images: [
-                    '/assets/projects/rigels-1.png',
-                    '/assets/projects/rigels-2.png',
-                    '/assets/projects/rigels-3.png',
+                    '/assets/projects/rigels/rigels-1.png',
+                    '/assets/projects/rigels/rigels-2.png',
                 ],
                 technologies: [
                     technologies.php,

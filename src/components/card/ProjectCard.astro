@@ -2,6 +2,7 @@
 import type Project from '@/entities/Project'
 import type PageSections from '@/interfaces/PageSections'
 import { __ } from '@config/i18n'
+import ProjectCarousel from './ProjectCarousel.vue'
 
 interface Props extends PageSections {
     project: Project
@@ -16,41 +17,15 @@ const hasImages = project.images && project.images.length > 0
 
 <article class='card project-card overflow-hidden' aria-labelledby={headingId}>
     <div class='project-card-inner'>
-        <!-- Carrusel de imágenes -->
+        <!-- Carrusel de imágenes (Vue Island) -->
         {
             hasImages && (
-                <div
-                    class='project-carousel'
-                    x-data={`{
-                        active: 0,
-                        images: ${JSON.stringify(project.images)},
-                        init() {
-                            setInterval(() => {
-                                this.active = (this.active + 1) % this.images.length
-                            }, 3000)
-                        }
-                    }`}
-                >
-                    {project.images.map((img, i) => (
-                        <div
-                            class='project-carousel-slide'
-                            x-show={`active === ${i}`}
-                            x-transition:enter='transition-opacity duration-700'
-                            x-transition:enter-start='opacity-0'
-                            x-transition:enter-end='opacity-100'
-                            x-transition:leave='transition-opacity duration-700'
-                            x-transition:leave-start='opacity-100'
-                            x-transition:leave-end='opacity-0'
-                        >
-                            <img
-                                src={img}
-                                alt={`${project.name} screenshot ${i + 1}`}
-                                class='project-carousel-img'
-                                loading='lazy'
-                            />
-                        </div>
-                    ))}
-                </div>
+                <ProjectCarousel
+                    client:visible
+                    images={project.images}
+                    projectName={project.name}
+                    classList='project-card-carousel'
+                />
             )
         }
 
@@ -122,29 +97,16 @@ const hasImages = project.images && project.images.length > 0
         }
     }
 
-    .project-carousel {
-        position: relative;
-        background: color-mix(in srgb, currentColor 5%, transparent);
+    .project-card-carousel {
+        width: 100%;
         min-height: 200px;
-        overflow: hidden;
+        height: 100%;
     }
 
     @media (min-width: 768px) {
-        .project-carousel {
+        .project-card-carousel {
             min-height: 240px;
         }
-    }
-
-    .project-carousel-slide {
-        position: absolute;
-        inset: 0;
-    }
-
-    .project-carousel-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
     }
 
     .project-card-body {
