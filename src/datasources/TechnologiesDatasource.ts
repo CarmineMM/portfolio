@@ -218,6 +218,13 @@ const technologies: Record<string, TechnologyRecord> = {
         webUrl: 'https://www.mysql.com/',
         description: 'MySQL',
     },
+    sap: {
+        id: '32',
+        name: 'SAP',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/sap/sap-original.svg',
+        webUrl: 'https://www.sap.com/',
+        description: 'SAP',
+    },
 }
 
 export default technologies

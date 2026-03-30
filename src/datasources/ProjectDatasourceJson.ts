@@ -110,6 +110,34 @@ export default class ProjectDatasourceJson extends ProjectContract {
             {
                 id: '5',
                 name: {
+                    es: 'SmartQuote — Sistema de Cotizaciones',
+                    en: 'SmartQuote — Quotation System',
+                },
+                description: {
+                    es: 'Sistema de gestión de cotizaciones y pedidos construido con <b>FilamentPHP</b>, con sincronización bidireccional con <b>SAP</b> y <b>Mele</b> mediante jobs de <b>Laravel</b>. Los productos, listas de precios y disponibilidad se sincronizan automáticamente desde SAP al sistema. Los vendedores crean cotizaciones desde tablet, las envían por correo al cliente y gestionan el estado (Borrador → Enviado → Procesado). Al procesar, la cotización se convierte en pedido, se sincroniza de vuelta a SAP y descuenta el inventario en Mele. Incluye descarga de cotizaciones y pedidos en <b>PDF</b> y dashboard con métricas de productos más solicitados e historial de cotizaciones.',
+                    en: 'Quotation and order management system built with <b>FilamentPHP</b>, with two-way synchronization with <b>SAP</b> and <b>Mele</b> via <b>Laravel</b> jobs. Products, price lists and availability are automatically synced from SAP into the system. Sales reps create quotes from a tablet, send them by email to the client, and manage the status flow (Draft → Sent → Processed). On processing, the quote becomes an order, syncs back to SAP, and decrements inventory in Mele. Includes <b>PDF</b> export for quotes and orders, plus a dashboard with top product metrics and quote history.',
+                },
+                url: 'https://github.com/CarmineMM',
+                images: [
+                    '/assets/projects/smart-quote/smartquote-1.png',
+                    '/assets/projects/smart-quote/smartquote-2.png',
+                    '/assets/projects/smart-quote/smartquote-3.png',
+                    '/assets/projects/smart-quote/smartquote-4.png',
+                ],
+                technologies: [
+                    technologies.laravel,
+                    technologies.livewire,
+                    technologies.filamentphp,
+                    technologies.alpinejs,
+                    technologies.javascript,
+                    technologies.sqlServer,
+                    technologies.postgreSQL,
+                    technologies.sap,
+                ],
+            },
+            {
+                id: '6',
+                name: {
                     es: 'Portal Cautivo WiFi',
                     en: 'WiFi Captive Portal',
                 },
