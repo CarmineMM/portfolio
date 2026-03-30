@@ -80,6 +80,7 @@ export default class ProjectDatasourceJson extends ProjectContract {
                     technologies.nodejs,
                     technologies.express,
                     technologies.sqlite,
+                    technologies.postgreSQL,
                     technologies.odoo,
                 ],
             },
@@ -104,6 +105,29 @@ export default class ProjectDatasourceJson extends ProjectContract {
                     technologies.alpinejs,
                     technologies.javascript,
                     technologies.postgreSQL,
+                ],
+            },
+            {
+                id: '5',
+                name: {
+                    es: 'Portal Cautivo WiFi',
+                    en: 'WiFi Captive Portal',
+                },
+                description: {
+                    es: 'Portal de acceso WiFi construido en <b>CodeIgniter 4</b> con un diferenciador técnico clave: se desarrollaron <b>drivers propios en PHP</b> para la integración con equipos <b>TP-Link Omada</b> y <b>Ubiquiti UniFi</b>, permitiendo autenticar y autorizar clientes directamente en los controladores de red desde la aplicación. Los usuarios acceden al WiFi completando un formulario de registro cuyos datos quedan almacenados, facilitando la gestión de acceso y la captación de información de usuarios en entornos como hoteles, restaurantes o eventos.',
+                    en: 'WiFi access portal built on <b>CodeIgniter 4</b> with a key technical differentiator: <b>custom PHP drivers</b> were developed to integrate with <b>TP-Link Omada</b> and <b>Ubiquiti UniFi</b> controllers, enabling the application to directly authenticate and authorize clients on the network hardware. Users gain WiFi access by completing a registration form, capturing their data for access management — ideal for hotels, restaurants, or events.',
+                },
+                url: 'https://github.com/desarrollosDaka/portalcautivo_c4',
+                images: [
+                    '/assets/projects/captive-portal/captive-portal-1.png',
+                ],
+                technologies: [
+                    technologies.php,
+                    technologies.codeigniter,
+                    technologies.javascript,
+                    technologies.alpinejs,
+                    technologies.tailwindcss,
+                    technologies.sqlServer,
                 ],
             },
         ])

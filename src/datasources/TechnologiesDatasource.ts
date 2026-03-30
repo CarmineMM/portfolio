@@ -204,6 +204,20 @@ const technologies: Record<string, TechnologyRecord> = {
         webUrl: 'https://www.sqlite.org/',
         description: 'SQLite',
     },
+    codeigniter: {
+        id: '30',
+        name: 'CodeIgniter',
+        icon: 'https://codeigniter.com/assets/icons/ci-logo.png',
+        webUrl: 'https://codeigniter.com/',
+        description: 'CodeIgniter',
+    },
+    mysql: {
+        id: '31',
+        name: 'MySQL',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg',
+        webUrl: 'https://www.mysql.com/',
+        description: 'MySQL',
+    },
 }
 
 export default technologies
