@@ -95,8 +95,7 @@ export default class ProjectDatasourceJson extends ProjectContract {
                 },
                 url: 'https://tiendasdaka.com',
                 images: [
-                    '/assets/projects/actualiza-gana-1.png',
-                    '/assets/projects/actualiza-gana-2.png',
+                    '/assets/projects/daka/actualiza-gana.mp4',
                 ],
                 technologies: [
                     technologies.laravel,
