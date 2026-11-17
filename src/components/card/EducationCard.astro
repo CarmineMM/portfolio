@@ -14,10 +14,10 @@ const isSameYear = startDate === endDate
 ---
 
 <article
-    class='card card-side education-card'
+    class='card card-side education-card surface-card'
     aria-labelledby={`education-${education.id}-heading`}
 >
-    <div class='card-body hidden max-w-24 min-w-24 items-center pr-1 md:block'>
+    <div class='card-body hidden max-w-32 min-w-32 items-start pr-0 md:flex'>
         <EducationCardImage logoUrl={education.logoUrl} institution={education.institution} />
     </div>
     <div class='card-body'>
@@ -27,16 +27,18 @@ const isSameYear = startDate === endDate
                 logoUrl={education.logoUrl}
                 institution={education.institution}
             />
-            <h3 class='card-title'>{education.institution}</h3>
+            <h3 class='card-title' id={`education-${education.id}-heading`}>
+                {education.institution}
+            </h3>
         </div>
-        <h5 class='flex items-center gap-1'>
+        <h4 class='text-base-content/90 flex flex-wrap items-center gap-1 font-medium'>
             <span>{education.degree}</span>
             <span><i data-feather='minus' class='w-4'></i></span>
             <span>{education.fieldOfStudy}</span>
-        </h5>
-        <p class='text-info/50!'>
+        </h4>
+        <p class='text-base-content/50! mb-0 font-mono text-xs'>
             {isSameYear ? startDate : `${startDate} - ${endDate}`}
         </p>
-        <p set:html={education.description} />
+        <p class='mt-1 text-sm' set:html={education.description} />
     </div>
 </article>

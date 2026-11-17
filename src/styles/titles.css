@@ -1,15 +1,41 @@
 .h1 {
-    @apply mb-4 text-3xl font-bold lg:mb-5 lg:text-4xl xl:text-5xl;
+    @apply font-display text-base-content text-5xl leading-[0.95] font-bold tracking-tight sm:text-6xl xl:text-7xl;
 }
 
 .h4 {
-    @apply mb-2 text-lg xl:text-xl;
+    @apply text-lg font-medium xl:text-xl;
+}
+
+.eyebrow {
+    @apply text-primary font-mono text-xs tracking-[0.2em] uppercase;
+}
+
+.section-heading {
+    @apply mb-8 flex items-center gap-4 pt-20 lg:pt-28;
+}
+
+.section-heading .section-index {
+    @apply text-primary font-mono text-sm;
+}
+
+.section-heading h2,
+.section-heading h3 {
+    @apply font-display text-base-content text-2xl font-semibold tracking-tight whitespace-nowrap;
+}
+
+.section-heading::after {
+    content: '';
+    @apply from-base-content/20 h-px flex-1 bg-gradient-to-r to-transparent;
 }
 
 p {
-    @apply text-base-content/70 mb-1.5;
+    @apply text-base-content/70 mb-3 leading-relaxed;
 }
 
 p b {
     @apply text-base-content font-semibold;
+}
+
+p a {
+    @apply text-primary;
 }

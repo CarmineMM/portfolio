@@ -16,13 +16,9 @@ interface Props {
 const { homeUrl, label, homeLabel, links } = Astro.props
 ---
 
-<nav
-    id='main-navbar'
-    class='text-secondary-content mt-12 hidden leading-8 lg:block xl:mt-16 xl:leading-10'
-    aria-label={label}
->
+<nav id='main-navbar' class='mt-14 hidden lg:block' aria-label={label}>
     <h2 class='sr-only'>{label}</h2>
-    <ul class='space-y-2'>
+    <ul class='space-y-1'>
         <li class='hidden'>
             <a
                 href={homeUrl}
@@ -37,12 +33,12 @@ const { homeUrl, label, homeLabel, links } = Astro.props
                     <a
                         href={link.href}
                         data-nav-link
-                        class='group hover:text-secondary flex items-center gap-3 transition-all duration-300'
+                        class='group flex items-center gap-4 py-2.5 font-mono text-xs tracking-[0.18em] uppercase'
                     >
-                        <span class='nav-icon opacity-50 transition-opacity group-hover:opacity-100'>
-                            <i data-feather={link.icon} class='w-5.5' />
+                        <span class='nav-line' aria-hidden='true' />
+                        <span class='nav-label text-base-content/50 transition-colors duration-200'>
+                            {link.label}
                         </span>
-                        <span class='nav-label'>{link.label}</span>
                     </a>
                 </li>
             ))
@@ -77,13 +73,13 @@ const { homeUrl, label, homeLabel, links } = Astro.props
          * @description Detects the active section based on scroll position and updates the UI.
          */
         const handleScroll = () => {
-            const currentSectionIndex = findCurrentSectionIndex(sections, 10)
+            const currentSectionIndex = findCurrentSectionIndex(sections, 160)
 
             navLinks.forEach((link, index) => {
                 if (index === currentSectionIndex) {
-                    link.classList.add('active-link', 'text-secondary')
+                    link.classList.add('active-link')
                 } else {
-                    link.classList.remove('active-link', 'text-secondary')
+                    link.classList.remove('active-link')
                 }
             })
         }

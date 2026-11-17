@@ -1,10 +1,24 @@
-/* Highlighting active section */
-.active-link {
-    @apply font-bold;
+/* Desktop nav: a line indicator that grows on hover / active */
+.nav-line {
+    @apply bg-base-content/30 h-px w-8 transition-all duration-200;
 }
-.active-link .nav-icon {
-    @apply scale-110 opacity-100;
+
+[data-nav-link]:hover .nav-line,
+.active-link .nav-line {
+    @apply bg-base-content w-16;
 }
+
+[data-nav-link]:hover .nav-label,
 .active-link .nav-label {
-    @apply translate-x-1;
+    @apply text-base-content;
+}
+
+.status-dot {
+    @apply bg-primary relative inline-flex h-2 w-2 rounded-full;
+}
+
+.status-dot::after {
+    content: '';
+    @apply bg-primary absolute inset-0 rounded-full;
+    animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

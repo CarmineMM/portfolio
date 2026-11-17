@@ -13,8 +13,8 @@ const technologiesLabel = __('experience.technologies', { lng: lang })
 const durationLabel = experience.getDuration(lang)
 ---
 
-<article class='card card-side experience-card' aria-labelledby={headingId}>
-    <div class='card-body hidden items-center md:flex md:min-w-28 md:pr-1'>
+<article class='card card-side experience-card surface-card' aria-labelledby={headingId}>
+    <div class='card-body hidden items-start md:flex md:max-w-32 md:min-w-32 md:pr-0'>
         <!-- Logo Url -->
         {
             experience.companyLogoUrl && (
@@ -25,14 +25,19 @@ const durationLabel = experience.getDuration(lang)
                     rel='noopener noreferrer'
                     title={experience.company}
                 >
-                    <img src={experience.companyLogoUrl} alt={experience.company} class='rounded' />
+                    <img
+                        src={experience.companyLogoUrl}
+                        alt={experience.company}
+                        class='rounded-lg'
+                        loading='lazy'
+                    />
                 </a>
             )
         }
 
         <!-- Tiempo -->
         <p
-            class='lg:tooltip xl:tooltip-left mt-1 text-sm capitalize'
+            class='lg:tooltip xl:tooltip-left text-base-content/50! mt-2 font-mono text-xs capitalize'
             data-tip={durationLabel}
             aria-label={durationLabel}
         >
@@ -60,25 +65,27 @@ const durationLabel = experience.getDuration(lang)
                 )
             }
         </h3>
-        <h4>{experience.role}</h4>
-        <p class='capitalize md:hidden'>{durationLabel}</p>
+        <h4 class='text-base-content/90 font-medium'>{experience.role}</h4>
+        <p class='text-base-content/50! mb-0 font-mono text-xs capitalize md:hidden'>
+            {durationLabel}
+        </p>
         {
             experience.address && (
-                <p class='text-secondary-content! text-sm leading-0'>{experience.address}</p>
+                <p class='text-base-content/50! mb-0 text-xs'>{experience.address}</p>
             )
         }
-        <p class='mt-2' set:html={experience.description} />
+        <p class='mt-2 text-sm' set:html={experience.description} />
 
-        <ul class='flex gap-2 overflow-auto pb-2 lg:flex-wrap' aria-label={technologiesLabel}>
+        <ul class='flex gap-2 overflow-auto pb-1 lg:flex-wrap' aria-label={technologiesLabel}>
             {
                 experience.technologies.map((technology) => (
-                    <li class='badge badge-sm'>
+                    <li>
                         <a
                             href={technology.webUrl}
                             target='_blank'
                             rel='noopener noreferrer'
                             title={technology.name}
-                            class='text-nowrap'
+                            class='tech-pill'
                         >
                             {technology.name}
                         </a>

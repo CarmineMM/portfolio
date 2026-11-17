@@ -8,18 +8,19 @@ import Projects from '@/page-sections/home/Projects.astro'
 import Education from '@/page-sections/home/Education.astro'
 import { defaultLanguage } from '@config/i18n'
 import FavoriteTools from '@/page-sections/home/FavoriteTools.astro'
+import Contact from '@/page-sections/home/Contact.astro'
 
 const lang = defaultLanguage
 ---
 
-<MainLayout lang={lang} bodyClasses='tapestry-bg light-bg'>
+<MainLayout lang={lang}>
     <main
         id='main-content'
-        class='container grid grid-cols-1 gap-4 pb-12 lg:grid-cols-5'
+        class='container grid grid-cols-1 lg:grid-cols-5 lg:gap-12'
         aria-labelledby='resume-heading'
     >
         <Resume lang={lang} />
-        <div class='lg:col-span-3 lg:px-12 xl:px-24'>
+        <div class='lg:col-span-3 xl:pl-8'>
             <About lang={lang} />
 
             <Experience lang={lang} id='experience' />
@@ -29,15 +30,8 @@ const lang = defaultLanguage
             <FavoriteTools lang={lang} id='favorite-tools' />
 
             <Education lang={lang} id='education' />
+
+            <Contact lang={lang} id='contact' />
         </div>
     </main>
 </MainLayout>
-
-<script>
-    // Detect Safari browser
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-
-    if (isSafari) {
-        document.body.classList.remove('tapestry-bg')
-    }
-</script>

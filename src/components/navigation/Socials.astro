@@ -33,19 +33,18 @@ const links = [
 const navigationLabel = __('socials.label', { lng: lang })
 ---
 
-<nav class='my-3 flex justify-between gap-2' role='navigation' aria-label={navigationLabel}>
+<nav class='-ml-2 flex gap-1' aria-label={navigationLabel}>
     {
         links.map((link) => (
             <a
                 href={link.href}
-                class='btn btn-circle btn-ghost'
+                class='btn btn-circle btn-ghost btn-sm text-base-content/60 hover:text-primary'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label={link.label}
                 title={link.label}
             >
-                <i data-feather={link.icon} class='w-5' />
-                {/* <link.icon size={20} /> */}
+                <i data-feather={link.icon} class='w-[18px]' />
             </a>
         ))
     }

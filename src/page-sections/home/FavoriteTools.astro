@@ -2,6 +2,7 @@
 import type PageSections from '@/interfaces/PageSections'
 import FavoriteToolCard from '@components/card/FavoriteToolCard.astro'
 import { __ } from '@config/i18n'
+import SectionHeading from '@components/ui/SectionHeading.astro'
 
 interface Props extends PageSections {
     classList?: string
@@ -12,8 +13,10 @@ const { classList, lang, id } = Astro.props
 ---
 
 <section id={id} aria-labelledby='favorite-tools-heading' class={classList}>
-    <div class='divider py-10'>
-        <h3>{__('sections.favorite-tools.title', { lng: lang })}</h3>
-    </div>
+    <SectionHeading
+        index='04'
+        title={__('sections.favorite-tools.title', { lng: lang })}
+        id='favorite-tools-heading'
+    />
     <FavoriteToolCard lang={lang} />
 </section>

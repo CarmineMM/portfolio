@@ -15,7 +15,10 @@ const visitLabel = __('projects.visit', { lng: lang })
 const hasImages = project.images && project.images.length > 0
 ---
 
-<article class='card project-card overflow-hidden' aria-labelledby={headingId}>
+<article
+    class='card project-card bg-base-200/60 overflow-hidden backdrop-blur-sm'
+    aria-labelledby={headingId}
+>
     <div class='project-card-inner'>
         <!-- Carrusel de imágenes (Vue Island) -->
         {
@@ -36,7 +39,7 @@ const hasImages = project.images && project.images.length > 0
                     href={project.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    class='link link-hover'
+                    class='hover:text-primary transition-colors'
                 >
                     {project.name}
                 </a>
@@ -48,13 +51,13 @@ const hasImages = project.images && project.images.length > 0
                 <ul class='flex flex-wrap gap-2 pb-3' aria-label={technologiesLabel}>
                     {
                         project.technologies.map((technology) => (
-                            <li class='badge badge-sm'>
+                            <li>
                                 <a
                                     href={technology.webUrl}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     title={technology.name}
-                                    class='text-nowrap'
+                                    class='tech-pill'
                                 >
                                     {technology.name}
                                 </a>
@@ -67,9 +70,10 @@ const hasImages = project.images && project.images.length > 0
                     href={project.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    class='btn btn-sm btn-outline'
+                    class='btn btn-sm btn-ghost text-primary -ml-3 rounded-full'
                 >
-                    {visitLabel} ↗
+                    {visitLabel}
+                    <i data-feather='arrow-up-right' class='w-4'></i>
                 </a>
             </div>
         </div>
@@ -78,12 +82,15 @@ const hasImages = project.images && project.images.length > 0
 
 <style>
     .project-card {
-        border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-        transition: border-color 0.2s ease;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+        transition:
+            border-color 0.2s ease,
+            transform 0.2s ease;
     }
 
     .project-card:hover {
-        border-color: color-mix(in srgb, currentColor 28%, transparent);
+        border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+        transform: translateY(-2px);
     }
 
     .project-card-inner {

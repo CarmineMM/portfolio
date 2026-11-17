@@ -13,12 +13,12 @@ const { logoUrl, institution, classList } = Astro.props
         <img
             src={logoUrl}
             alt={`${institution} logo`}
-            class:list={['max-h-16 object-contain', classList]}
+            class:list={['max-h-14 rounded-lg object-contain', classList]}
         />
     ) : (
         <div
             class:list={[
-                'bg-info/10 flex h-16 w-16 items-center justify-center rounded-md',
+                'bg-primary/10 text-primary flex h-14 w-14 items-center justify-center rounded-xl',
                 classList,
             ]}
         >

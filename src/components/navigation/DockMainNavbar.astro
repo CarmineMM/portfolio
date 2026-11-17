@@ -11,9 +11,11 @@ interface Props {
     homeLabel: string
     homeIcon: string
     homeUrl: string
+    contactHref: string
+    contactLabel: string
 }
 
-const { links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
+const { links, homeLabel, homeIcon: HomeIcon, homeUrl, contactHref, contactLabel } = Astro.props
 ---
 
 <div id='dock-nav-assets' class='hidden'>
@@ -28,7 +30,9 @@ const { links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
     }
 </div>
 
-<div class='dock dock-md z-50 lg:hidden'>
+<div
+    class='dock dock-md bg-base-100/80 border-base-content/10 z-50 border-t backdrop-blur-lg lg:hidden'
+>
     <!-- 1. Home Button (Static) -->
     <a id='dock-home' href={homeUrl}>
         <i data-feather={HomeIcon} class='w-5'></i>
@@ -43,6 +47,12 @@ const { links, homeLabel, homeIcon: HomeIcon, homeUrl } = Astro.props
     <!-- 3. Next Section (Interactive) -->
     <a id='dock-next' href='#' class='text-center transition-opacity duration-300'>
         <!-- Content injected by JS -->
+    </a>
+
+    <!-- 4. Contact -->
+    <a href={contactHref} class='text-primary'>
+        <i data-feather='mail' class='w-5'></i>
+        <span class='dock-label'>{contactLabel}</span>
     </a>
 </div>
 

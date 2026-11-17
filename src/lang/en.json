@@ -36,7 +36,9 @@
             "about": "About",
             "experience": "Experience",
             "projects": "Projects",
-            "education": "Education"
+            "education": "Education",
+            "favorite-tools": "Favorite Tools",
+            "contact": "Contact"
         }
     },
     "sections": {
@@ -51,6 +53,12 @@
         },
         "education": {
             "title": "Education"
+        },
+        "favorite-tools": {
+            "title": "Favorite Tools"
+        },
+        "contact": {
+            "title": "Contact"
         }
     },
     "projects": {
@@ -68,10 +76,18 @@
     },
     "show-more": "Show more",
     "show-less": "Show less",
-    "download-resume": "Download Resume",
     "tools": {
         "rigels": {
             "description": "A tool to manage your projects efficiently."
         }
-    }
+    },
+    "status": "Open to new opportunities",
+    "contact": {
+        "cta": "Get in touch",
+        "title": "Let's build something together",
+        "text": "Have a project in mind, a role to fill or just want to chat about tech? My inbox is always open, and I usually reply within a day.",
+        "button": "Say hello",
+        "label": "Contact"
+    },
+    "footer": "Designed and built by Carmine Maggio with Astro, Tailwind and Vue."
 }

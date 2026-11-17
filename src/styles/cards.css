@@ -1,11 +1,30 @@
 .card {
-    @apply transition;
+    @apply transition duration-200;
 }
 
-.experience-card {
-    @apply hover:bg-accent-content/5 mb-6 items-start hover:shadow-md;
+/* Shared hover surface for experience/education/project cards */
+.surface-card {
+    @apply relative rounded-2xl border border-transparent;
 }
 
+.surface-card:hover {
+    @apply border-base-content/10 bg-base-content/[0.03];
+    box-shadow: 0 1px 0 0 color-mix(in oklab, var(--color-base-content) 6%, transparent) inset;
+}
+
+.surface-card:hover .card-title {
+    @apply text-primary;
+}
+
+.experience-card,
 .education-card {
-    @apply hover:bg-neutral-content/5 mb-6 transition hover:shadow-md;
+    @apply mb-2 items-start;
+}
+
+.card-title {
+    @apply font-display transition-colors duration-200;
+}
+
+.tech-pill {
+    @apply bg-primary/10 text-primary hover:bg-primary/20 inline-flex items-center rounded-full px-3 py-1 font-mono text-[11px] leading-none font-medium whitespace-nowrap transition-colors;
 }

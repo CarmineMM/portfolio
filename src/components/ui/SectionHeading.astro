@@ -1,0 +1,15 @@
+---
+interface Props {
+    index: string
+    title: string
+    id?: string
+    classList?: string
+}
+
+const { index, title, id, classList } = Astro.props
+---
+
+<div class:list={['section-heading', classList]}>
+    <span class='section-index' aria-hidden='true'>{index}.</span>
+    <h2 id={id}>{title}</h2>
+</div>

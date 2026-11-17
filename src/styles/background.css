@@ -1,8 +1,55 @@
-.theme-abyss .tapestry-bg {
-    background: url('/assets/background/tapestry.png') no-repeat center center fixed;
-    background-size: cover;
+/* Ambient background: soft glows + faint grid, plus a cursor spotlight on desktop */
+.ambient-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
 }
 
-.theme-acid .tapestry-bg {
-    background: #f6f5f5;
+.ambient-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            40rem 30rem at 10% -10%,
+            color-mix(in oklab, var(--color-primary) 16%, transparent),
+            transparent 70%
+        ),
+        radial-gradient(
+            35rem 25rem at 100% 110%,
+            color-mix(in oklab, var(--color-secondary) 14%, transparent),
+            transparent 70%
+        );
+}
+
+.ambient-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            color-mix(in oklab, var(--color-base-content) 5%, transparent) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            color-mix(in oklab, var(--color-base-content) 5%, transparent) 1px,
+            transparent 1px
+        );
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at 30% 0%, black, transparent 70%);
+}
+
+.spotlight {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+        600px circle at var(--mx, -999px) var(--my, -999px),
+        color-mix(in oklab, var(--color-primary) 7%, transparent),
+        transparent 60%
+    );
 }

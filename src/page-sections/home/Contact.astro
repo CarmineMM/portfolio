@@ -1,0 +1,45 @@
+---
+import type PageSections from '@/interfaces/PageSections'
+import SectionHeading from '@components/ui/SectionHeading.astro'
+import { __ } from '@config/i18n'
+
+interface Props extends PageSections {
+    id?: string
+}
+
+const { lang, id } = Astro.props as Props
+const email = 'carminemaggiom@gmail.com'
+---
+
+<section id={id} aria-labelledby='contact-heading'>
+    <SectionHeading
+        index='06'
+        title={__('sections.contact.title', { lng: lang })}
+        id='contact-heading'
+    />
+    <div
+        class='border-base-content/10 from-primary/10 to-secondary/5 relative overflow-hidden rounded-3xl border bg-gradient-to-br p-8 sm:p-12'
+    >
+        <p
+            class='font-display text-base-content! text-3xl leading-tight font-semibold tracking-tight sm:text-4xl'
+        >
+            {__('contact.title', { lng: lang })}
+        </p>
+        <p class='mt-4 max-w-lg'>{__('contact.text', { lng: lang })}</p>
+        <div class='mt-8 flex flex-wrap items-center gap-4'>
+            <a href={`mailto:${email}`} class='btn btn-primary btn-lg rounded-full px-8'>
+                <i data-feather='send' class='w-4'></i>
+                {__('contact.button', { lng: lang })}
+            </a>
+            <a
+                href={`mailto:${email}`}
+                class='text-base-content/60 hover:text-primary font-mono text-sm transition-colors'
+            >
+                {email}
+            </a>
+        </div>
+    </div>
+    <footer class='text-base-content/40 pt-16 pb-28 font-mono text-xs lg:pb-16'>
+        {__('footer', { lng: lang })}
+    </footer>
+</section>
