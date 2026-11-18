@@ -108,6 +108,28 @@ export default class ExperienceDatasourceJson extends ExperienceContract {
                         technologies.nestjs,
                     ],
                 },
+                {
+                    id: '5',
+                    role: {
+                        es: 'Project Manager',
+                        en: 'Project Manager',
+                    },
+                    company: 'Hilefp',
+                    companyWebsiteUrl: 'https://www.hilefp.agency/',
+                    companyLogoUrl: '/assets/companies-logos/hilefp-logo.png',
+                    startDate: '2026-09-01',
+                    description: {
+                        es: 'Gestiono proyectos de <b>software a medida</b> para clientes en Estados Unidos: CRMs, ERPs, sistemas de inventario, dashboards y <b>automatizaciones con IA</b>. Coordino el equipo de desarrollo, defino alcance y prioridades con los clientes y llevo cada entrega desde la planificación hasta producción, integrando flujos de <b>Agentic Engineering</b> para acelerar el desarrollo sin perder calidad.',
+                        en: 'I manage <b>custom software</b> projects for US-based clients: CRMs, ERPs, inventory systems, dashboards and <b>AI automations</b>. I coordinate the development team, define scope and priorities with clients, and take each delivery from planning to production, integrating <b>Agentic Engineering</b> workflows to speed up development without compromising quality.',
+                    },
+                    technologies: [
+                        technologies.claudeCode,
+                        technologies.codex,
+                        technologies.antigravity,
+                        technologies.laravel,
+                        technologies.react,
+                    ],
+                },
             ].reverse()
         )
     }

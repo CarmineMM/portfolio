@@ -15,7 +15,8 @@
         "I've worked on applications that serve real users at scale. At <b>Tiendas Daka</b>, I contributed to platforms used by more than <b>2 million customers</b>, including a form in Laravel and Livewire that handled over <b>300,000 users</b> and an e-commerce project built with React, Next.js, NestJS and MedusaJS.",
         "I care a lot about <b>clean, maintainable architecture</b>. I lean toward backend-heavy designs, keeping business logic on the server, using Laravel queues, jobs, WebSockets and well-structured APIs, so that frontends stay light and the system is easy to evolve.",
         "Beyond employment, I run <a href='https://rigels.io' target='_blank' class='font-bold link link-hover'>Rigels.io</a>, a personal web hosting service built on Hetzner infrastructure, where I handle everything from server configuration (Nginx, PHP-FPM, SSL) to client support. It keeps me sharp on the DevOps side and gives me real skin in the game as a solo operator.",
-        "I'm currently <b>open to new opportunities</b>, whether that's a full-time role, a contract, or a collaboration on something interesting. I work well in agile teams, participate actively in code reviews, and I'm used to writing documentation that actually helps people.",
+        "Today I work as a <b>Project Manager</b> at <a href='https://www.hilefp.agency/' target='_blank' rel='noopener noreferrer' class='font-bold link link-hover'>Hilefp</a>, and my day-to-day relies heavily on <b>Agentic Engineering</b>: I design and orchestrate workflows with AI agents using <b>Claude Code</b>, <b>Codex</b> and <b>Antigravity</b>, and I apply <b>Context Engineering</b> (specs, project memory, skills and well-scoped prompts) so agents produce code that meets real quality standards. I still review every change and keep the final say on architecture.",
+        "I work well in agile teams, participate actively in code reviews, and I'm used to writing documentation that actually helps people, both humans and agents.",
         "When I'm not coding, I'm usually tinkering with side projects, exploring new tools, or thinking about systems. If you want to see what I'm building, check out my <a href='https://github.com/CarmineMM' target='_blank' rel='noopener noreferrer' class='link link-hover font-bold'>GitHub</a>."
     ],
     "experience": {
@@ -81,7 +82,7 @@
             "description": "A tool to manage your projects efficiently."
         }
     },
-    "status": "Open to new opportunities",
+    "status": "Project Manager at Hilefp",
     "contact": {
         "cta": "Get in touch",
         "title": "Let's build something together",

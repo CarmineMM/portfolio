@@ -12,8 +12,10 @@ export interface ExperienceRecord {
     id: string
     role: languages
     company: string
+    companyWebsiteUrl?: string
+    companyLogoUrl?: string
     startDate: string
-    endDate: string
+    endDate?: string
     description: languages
     technologies: TechnologyRecord[]
 }

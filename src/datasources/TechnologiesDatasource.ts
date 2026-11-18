@@ -225,6 +225,27 @@ const technologies: Record<string, TechnologyRecord> = {
         webUrl: 'https://www.sap.com/',
         description: 'SAP',
     },
+    claudeCode: {
+        id: '33',
+        name: 'Claude Code',
+        icon: '',
+        webUrl: 'https://www.claude.com/product/claude-code',
+        description: 'Claude Code',
+    },
+    codex: {
+        id: '34',
+        name: 'Codex',
+        icon: '',
+        webUrl: 'https://openai.com/codex/',
+        description: 'Codex',
+    },
+    antigravity: {
+        id: '35',
+        name: 'Antigravity',
+        icon: '',
+        webUrl: 'https://antigravity.google/',
+        description: 'Antigravity',
+    },
 }
 
 export default technologies

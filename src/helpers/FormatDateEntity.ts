@@ -18,7 +18,9 @@ export default class FormatDateEntity {
     }
 
     getEndDateYear(): string {
-        return this.endDate ? this.endDate.format('YYYY') : __('experience.present')
+        return this.endDate
+            ? this.endDate.format('YYYY')
+            : __('experience.present', { lng: this.startDate.locale() })
     }
 
     getDuration(lang: string): string {
@@ -27,7 +29,7 @@ export default class FormatDateEntity {
         const currentEndDate = this.endDate ?? dayjs()
         const endLabel = this.endDate
             ? currentEndDate.locale(locale).format('MMMM YYYY')
-            : __('experience.present')
+            : __('experience.present', { lng: lang })
 
         const totalMonths = currentEndDate.diff(this.startDate, 'month')
         const years = Math.floor(totalMonths / 12)

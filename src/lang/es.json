@@ -15,7 +15,8 @@
         "He trabajado en aplicaciones que sirven usuarios reales a escala. En <b>Tiendas Daka</b>, contribuí a plataformas usadas por más de <b>2 millones de clientes</b>, incluyendo un formulario en Laravel y Livewire que manejó más de <b>300.000 usuarios</b> y un e-commerce construido con React, Next.js, NestJS y MedusaJS.",
         "Me importa mucho la <b>arquitectura limpia y mantenible</b>. Prefiero diseños con lógica concentrada en el servidor, usando colas, jobs, WebSockets y APIs bien estructuradas en Laravel, para que el frontend sea liviano y el sistema sea fácil de evolucionar.",
         "Más allá del empleo, opero <a href='https://rigels.io' target='_blank' class='font-bold link link-hover'>Rigels.io</a>, un servicio de hosting web personal construido sobre infraestructura de Hetzner, donde me encargo de todo: configuración del servidor (Nginx, PHP-FPM, SSL), backups y soporte a clientes. Me mantiene afilado en DevOps y me da experiencia real como operador independiente.",
-        "Actualmente estoy <b>abierto a nuevas oportunidades</b>, ya sea un rol a tiempo completo, contrato o colaboración en algo interesante. Trabajo bien en equipos ágiles, participo activamente en code reviews y estoy acostumbrado a escribir documentación que realmente ayuda.",
+        "Hoy trabajo como <b>Project Manager</b> en <a href='https://www.hilefp.agency/' target='_blank' rel='noopener noreferrer' class='font-bold link link-hover'>Hilefp</a>, y mi día a día se apoya fuertemente en el <b>Agentic Engineering</b>: diseño y orquesto flujos de trabajo con agentes de IA usando <b>Claude Code</b>, <b>Codex</b> y <b>Antigravity</b>, y aplico <b>Context Engineering</b> (especificaciones, memoria del proyecto, skills y prompts bien acotados) para que los agentes produzcan código que cumpla estándares de calidad reales. Sigo revisando cada cambio y mantengo la decisión final sobre la arquitectura.",
+        "Trabajo bien en equipos ágiles, participo activamente en code reviews y estoy acostumbrado a escribir documentación que realmente ayuda, tanto a personas como a agentes.",
         "Cuando no estoy programando, suelo estar explorando side projects, probando nuevas herramientas o pensando en sistemas. Si quieres ver en qué estoy trabajando, visita mi <a href='https://github.com/CarmineMM' target='_blank' rel='noopener noreferrer' class='link link-hover font-bold'>GitHub</a>."
     ],
     "experience": {
@@ -81,7 +82,7 @@
             "description": "Una herramienta para gestionar tus proyectos de manera eficiente."
         }
     },
-    "status": "Abierto a nuevas oportunidades",
+    "status": "Project Manager en Hilefp",
     "contact": {
         "cta": "Contáctame",
         "title": "Construyamos algo juntos",

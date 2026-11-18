@@ -20,7 +20,9 @@ export default class ExperienceRepository {
                     role: _.get(experience.role, lang, experience.role.es),
                     description: _.get(experience.description, lang, experience.description.es),
                     startDate: dayjs.utc(experience.startDate).locale(lang),
-                    endDate: dayjs.utc(experience.endDate).locale(lang),
+                    endDate: experience.endDate
+                        ? dayjs.utc(experience.endDate).locale(lang)
+                        : undefined,
                     technologies: experience.technologies.map(
                         (technology) => new Technology(technology)
                     ),
