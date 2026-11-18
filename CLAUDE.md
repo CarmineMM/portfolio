@@ -9,7 +9,7 @@ Portafolio personal de Carmine Maggio. Sitio estatico bilingue (en/es) hecho con
 - `pnpm lint`: ESLint
 - `pnpm format`: Prettier sobre todo el repo (ver la advertencia de abajo)
 
-Deploy: GitHub Actions (`.github/workflows/deploy.yml`) al hacer push a `main`.
+Deploy: Docker. `Dockerfile` multi-stage (`dev` con `astro dev`, `prod` con Nginx sirviendo `dist/`, config en `docker/nginx.conf`). `docker compose --profile dev up` o `--profile prod up -d --build`. No hay GitHub Actions.
 
 ## Estructura
 

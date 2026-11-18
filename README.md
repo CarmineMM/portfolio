@@ -1,10 +1,28 @@
 # Portfolio Carmine Maggio
 
-## Despliegue en GitHub Pages
+Sitio estatico bilingue (en/es) con Astro, Tailwind, daisyUI y Vue.
 
-1. Habilita **Pages** en el repositorio configurando la rama `gh-pages` o "GitHub Actions" como origen (Settings → Pages).
-2. Asegúrate de que la rama `main` contenga el workflow en `.github/workflows/deploy.yml`.
-3. Cada `push` a `main` ejecutará el build con `pnpm run build` y publicará el contenido de `dist` mediante GitHub Actions.
-4. Si necesitas desplegar manualmente, utiliza la opción **Run workflow** en la pestaña *Actions*.
+## Docker
 
-> Nota: El workflow emplea Node.js 20 y pnpm 9; si pruebas localmente instala pnpm globalmente o usa `corepack enable`.
+Un solo `Dockerfile` multi-stage con dos targets, orquestados con `compose.yaml`:
+
+- **Desarrollo** (servidor de Astro con hot reload en http://localhost:4321):
+
+    ```bash
+    docker compose --profile dev up --build
+    ```
+
+- **Produccion** (build estatico servido por Nginx en http://localhost:8080):
+
+    ```bash
+    docker compose --profile prod up -d --build
+    ```
+
+Sin compose: `docker build --target prod -t portfolio .` y `docker run -p 8080:80 portfolio`.
+
+## Local sin Docker
+
+```bash
+pnpm install
+pnpm dev
+```
